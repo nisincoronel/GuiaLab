@@ -43,79 +43,63 @@ const determinaciones = [
   { nombre: "Exudado Vaginal / Endocervical", area: "Microbiología", muestra: "Secreción vaginal", tubo: "Hisopo con medio de transporte", toma: "48 hs sin relaciones ni óvulos", urgencia: "Baja", procesamiento: "12 hs", obs: "No realizar higiene profunda previa." }
 ];
 
-/**
- * Función principal para renderizar la lista lateral
- */
 function render() {
-  const list = document.getElementById("examList");
-  const search = document.getElementById("searchInput").value.toLowerCase();
-  list.innerHTML = "";
+    const list = document.getElementById("examList");
+    const search = document.getElementById("searchInput").value.toLowerCase();
+    const areaFilter = document.getElementById("areaSelect").value;
+    
+    list.innerHTML = "";
 
-  // Filtrar por nombre o por área
-  const filtered = determinaciones.filter(d => 
-    d.nombre.toLowerCase().includes(search) || 
-    d.area.toLowerCase().includes(search)
-  );
+    // No mostrar nada si no hay búsqueda activa
+    if (search.trim() === "" && areaFilter === "") return;
 
-  filtered.forEach(d => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <div>
-          <strong>${d.nombre}</strong><br>
-          <small style="color:#7f8c8d">${d.area}</small>
-        </div>
-        <i class="fas fa-chevron-right" style="font-size:0.8em; color:#ddd"></i>
-      </div>
-    `;
-    li.onclick = () => mostrarDetalle(d);
-    list.appendChild(li);
-  });
+    const filtered = determinaciones.filter(d => {
+        const matchText = d.nombre.toLowerCase().includes(search);
+        const matchArea = areaFilter === "" || d.area === areaFilter;
+        return matchText && matchArea;
+    });
+
+    filtered.forEach(d => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+            <div>
+                <strong style="color:#2c3e50">${d.nombre}</strong><br>
+                <small style="color:#3498db">${d.area}</small>
+            </div>
+            <i class="fas fa-chevron-right" style="color:#bdc3c7"></i>
+        `;
+        li.onclick = () => mostrarDetalle(d);
+        list.appendChild(li);
+    });
 }
 
-/**
- * Función para mostrar la tarjeta de detalles con animaciones
- */
 function mostrarDetalle(d) {
-  const card = document.getElementById("detailCard");
-  card.classList.remove("hidden");
-
-  // Inyectar datos en el DOM
-  document.getElementById("d-name").textContent = d.nombre;
-  document.getElementById("d-area").textContent = d.area;
-  document.getElementById("d-muestra").textContent = d.muestra;
-  document.getElementById("d-toma").textContent = d.toma;
-  document.getElementById("d-ayuno").textContent = d.ayuno;
-  document.getElementById("d-centrifugar").textContent = d.centrifugar;
-  document.getElementById("d-separar").textContent = d.separar;
-  document.getElementById("d-procesamiento").textContent = d.procesamiento;
-  document.getElementById("d-obs").innerHTML = d.obs;
-
-  // Lógica para etiquetas de Urgencia
-  const urg = document.getElementById("d-urgencia");
-  urg.textContent = d.urgencia;
-  urg.className = "badge " + d.urgencia.toLowerCase();
-
-  // Lógica para etiquetas de Tubos (Color dinámico)
-  const tubo = document.getElementById("d-tubo");
-  tubo.textContent = d.tubo;
-  tubo.className = "tubo-badge"; // Reset clases
-  
-  const tStr = d.tubo.toLowerCase();
-  if (tStr.includes("lila") || tStr.includes("edta")) tubo.classList.add("lila");
-  else if (tStr.includes("celeste") || tStr.includes("citrato")) tubo.classList.add("celeste");
-  else if (tStr.includes("rojo") || tStr.includes("amarillo") || tStr.includes("suero")) tubo.classList.add("rojo");
-  else if (tStr.includes("frasco") || tStr.includes("estéril")) tubo.classList.add("estéril");
-  else tubo.classList.add("gris"); // Color por defecto
-
-  // Scroll suave hacia arriba en móviles al seleccionar
-  if (window.innerWidth < 768) {
-    card.scrollIntoView({ behavior: 'smooth' });
-  }
+    const modal = document.getElementById("modal");
+    const modalData = document.getElementById("modalData");
+    
+    modalData.innerHTML = `
+        <h2 style="color:#3498db; margin-top:0">${d.nombre}</h2>
+        <p><strong>Sector:</strong> ${d.area}</p>
+        <p><strong>Muestra:</strong> ${d.muestra}</p>
+        <p><strong>Tubo:</strong> ${d.tubo}</p>
+        <p><strong>Toma de muestra:</strong> ${d.toma}</p>
+        <p><strong>Estabilidad:</strong> ${d.procesamiento}</p>
+        <hr>
+        <p style="background:#f9f9f9; padding:10px; border-radius:8px; font-style:italic">
+            <strong>Obs:</strong> ${d.obs}
+        </p>
+    `;
+    modal.style.display = "block";
 }
 
-// Event Listeners
-document.getElementById("searchInput").addEventListener("input", render);
+// Cerrar modal
+document.querySelector(".close").onclick = () => document.getElementById("modal").style.display = "none";
+window.onclick = (event) => {
+    if (event.target == document.getElementById("modal")) {
+        document.getElementById("modal").style.display = "none";
+    }
+}
 
-// Inicialización
-render();
+// Listeners
+document.getElementById("searchInput").addEventListener("input", render);
+document.getElementById("areaSelect").addEventListener("change", render);
