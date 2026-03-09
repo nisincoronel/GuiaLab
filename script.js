@@ -32,7 +32,15 @@ const determinaciones = [
   { nombre: "Cortisol", area: "Endocrino", muestra: "Suero", tubo: "Rojo/Amarillo", toma: "8:00 AM EXACTA", urgencia: "Baja", procesamiento: "Especial", obs: "Previo ayuno 8hs. Consignar medicación. Refrigerado hasta 48hs." },
   { nombre: "PTHi (Parathormona)", area: "Endocrino", muestra: "Suero", tubo: "Rojo/Amarillo", toma: "Antes de las 9 AM", urgencia: "Baja", procesamiento: "Centrifugar ya", obs: "Centrifugar inmediatamente. Refrigerar hasta 48hs." },
   { nombre: "Prolactina", area: "Endocrino", muestra: "Suero", tubo: "Rojo/Amarillo", toma: "8:00 AM / Reposo", urgencia: "Baja", procesamiento: "Especial", obs: "Día 3-5 del ciclo. No estrés, no alcohol, no sexo 48hs antes." },
-  { nombre: "TSH / T3 / T4", area: "Endocrino", muestra: "Suero", tubo: "Rojo/Amarillo", toma: "Antes de las 9 AM", urgencia: "Baja", procesamiento: "Diario", obs: "Consignar medicación. Previo ayuno 8hs." }
+  { nombre: "TSH / T3 / T4", area: "Endocrino", muestra: "Suero", tubo: "Rojo/Amarillo", toma: "Antes de las 9 AM", urgencia: "Baja", procesamiento: "Diario", obs: "Consignar medicación. Previo ayuno 8hs." },
+  
+  // SECTOR MICROBIOLOGÍA
+  { nombre: "Urocultivo (Chorro Medio)", area: "Microbiología", muestra: "Orina", tubo: "Frasco Estéril", toma: "Higiene previa, descartar primer chorro", urgencia: "Media", procesamiento: "2 hs", obs: "Si demora >2hs, refrigerar a 4°C. Máximo 24hs." },
+  { nombre: "Hisopado de Fauces", area: "Microbiología", muestra: "Secreción faríngea", tubo: "Medio de transporte (Stuart/Amies)", toma: "Ayuno, sin higiene bucal ni gárgaras", urgencia: "Media", procesamiento: "12 hs", obs: "No usar antisépticos bucales antes de la toma." },
+  { nombre: "Hemocultivo (Adultos/Pedriátrico)", area: "Microbiología", muestra: "Sangre entera", tubo: "Frasco de cultivo específico", toma: "Asepsia estricta con clorhexidina", urgencia: "Alta", procesamiento: "Inmediato", obs: "No refrigerar. Mantener a temperatura ambiente o 37°C." },
+  { nombre: "Coprocultivo", area: "Microbiología", muestra: "Materia fecal", tubo: "Frasco limpio", toma: "Muestra fresca (tamaño nuez)", urgencia: "Media", procesamiento: "Inmediato", obs: "Elegir zonas con moco o sangre. No usar laxantes." },
+  { nombre: "Baciloscopía (BK) de Esputo", area: "Microbiología", muestra: "Esputo (Expectoración profunda)", tubo: "Frasco estéril de boca ancha", toma: "3 muestras (una por día)", urgencia: "Media", procesamiento: "24 hs", obs: "No es saliva. Primera mañana en ayunas es ideal." },
+  { nombre: "Exudado Vaginal / Endocervical", area: "Microbiología", muestra: "Secreción vaginal", tubo: "Hisopo con medio de transporte", toma: "48 hs sin relaciones ni óvulos", urgencia: "Baja", procesamiento: "12 hs", obs: "No realizar higiene profunda previa." }
 ];
 
 /**
