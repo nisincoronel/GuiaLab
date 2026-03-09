@@ -1,24 +1,40 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuíaLab Pre-Analítica </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GuíaLab - Pre-Analítica</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 
     <div class="app-container">
         <header>
             <h1>GuíaLab Pre-Analítica</h1>
-            <p>Buscador| Posadas, Misiones</p>
+            <p>Manual de Gestión | Posadas, Misiones</p>
         </header>
+
+        <div id="pedido-status" class="pedido-container" style="display: none;">
+            <span><i class="fas fa-clipboard-list"></i> Pedido: <strong id="contador-pedido">0</strong></span>
+            <div>
+                <button onclick="enviarWhatsApp()" class="btn-ws">
+                    <i class="fab fa-whatsapp"></i> Enviar
+                </button>
+                <button onclick="vaciarPedido()" class="btn-clear">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
 
         <section class="search-section">
             <div class="input-group">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Buscar estudio (ej: Hemograma)...">
+                <input type="text" id="searchInput" placeholder="Buscar determinación...">
             </div>
             
             <div class="select-group">
@@ -31,8 +47,8 @@
                     <option value="Química">🧪 Química Clínica</option>
                     <option value="Endocrinología">🧬 Endocrinología</option>
                     <option value="Serología">💉 Serología</option>
-                  <option value="Orina">🚽 Orina</option>
-        <option value="Parasitología">🦠 Parasitología</option>
+                    <option value="Orina">🚽 Orina</option>
+                    <option value="Parasitología">🦠 Parasitología</option>
                 </select>
             </div>
         </section>
@@ -41,7 +57,7 @@
 
         <div id="modal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" id="closeModal">&times;</span>
                 <div id="modalData"></div>
             </div>
         </div>
@@ -51,21 +67,26 @@
             <strong>Nisin Coronel</strong>
             <span>Técnico Superior en Lab. Químico Biológico</span>
             <div class="footer-tag">Posadas, Misiones | 2026</div>
+            
+            <a href="https://wa.me/+5493765127562" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               style="text-decoration: none; background: #25d366; color: white; padding: 10px 20px; border-radius: 25px; font-size: 0.85em; display: inline-block; margin-top: 15px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <i class="fab fa-whatsapp"></i> Consultas Profesionales
+            </a>
         </footer>
     </div>
 
     <script src="script.js"></script>
-  <a href="https://wa.me/+5493765127562" target="_blank" style="text-decoration: none; background: #25d366; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; display: inline-block; margin-top: 10px;">
-    <i class="fab fa-whatsapp"></i> Consultas Profesionales
-</a>
-  <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js')
-        .then(reg => console.log('Modo Offline Activo', reg))
-        .catch(err => console.log('Error al activar offline', err));
-    });
-  }
-</script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('✅ GuíaLab Offline Activo'))
+                    .catch(err => console.log('❌ Error Service Worker', err));
+            });
+        }
+    </script>
 </body>
 </html>
