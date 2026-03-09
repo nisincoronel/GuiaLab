@@ -3,6 +3,7 @@
     --dark: #2c3e50;
     --light-bg: #f4f7f6;
     --white: #ffffff;
+    --whatsapp: #25d366;
 }
 
 body {
@@ -34,7 +35,43 @@ header p {
     color: #7f8c8d;
 }
 
-/* Buscador y Filtro */
+/* --- Sistema de Pedido y WhatsApp --- */
+.pedido-container {
+    background: var(--dark);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: none; /* Se activa por JS */
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+}
+
+.btn-ws { 
+    background: var(--whatsapp); 
+    color: white; 
+    border: none; 
+    padding: 8px 15px; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.btn-clear { 
+    background: #e74c3c; 
+    color: white; 
+    border: none; 
+    padding: 8px 12px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    margin-left: 5px; 
+}
+
+/* --- Buscador y Filtro --- */
 .search-section {
     display: flex;
     flex-direction: column;
@@ -59,7 +96,7 @@ input, select {
     padding: 12px 12px 12px 40px;
     border: 1px solid #ddd;
     border-radius: 12px;
-    font-size: 16px; /* Evita zoom automático en iPhone */
+    font-size: 16px; 
     outline: none;
     transition: border 0.3s;
 }
@@ -68,7 +105,7 @@ input:focus, select:focus {
     border-color: var(--primary);
 }
 
-/* Lista de Resultados */
+/* --- Lista de Resultados --- */
 #examList {
     list-style: none;
     padding: 0;
@@ -87,12 +124,36 @@ input:focus, select:focus {
     animation: fadeIn 0.3s ease;
 }
 
+/* Indicadores de Color de Tubo y Urgencia */
+.tubo-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+
+.badge {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.urgencia-alta { background: #ffcccc; color: #c0392b; border: 1px solid #e74c3c; }
+.urgencia-media { background: #fff5d1; color: #d4ac0d; border: 1px solid #f1c40f; }
+.urgencia-baja { background: #d5f5e3; color: #27ae60; border: 1px solid #2ecc71; }
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Modal */
+/* --- Modal --- */
 .modal {
     display: none;
     position: fixed;
@@ -123,7 +184,7 @@ input:focus, select:focus {
     cursor: pointer;
 }
 
-/* Footer */
+/* --- Footer --- */
 footer {
     text-align: center;
     margin-top: 40px;
