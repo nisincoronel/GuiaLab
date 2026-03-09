@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>GuiaLab</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="container">
+  <aside class="sidebar">
+    <div class="brand">
+      <i class="fas fa-microscope"></i>
+      <h2>GuiaLab <span>Busca</span></h2>
+    </div>
+    <input type="text" id="searchInput" placeholder="¿Qué determinación buscas?">
+    <div class="filters">
+      <select id="areaFilter">
+        <option value="">Todas las Áreas</option>
+        <option value="Hematología">Hematología</option>
+        <option value="Hemostasia">Hemostasia</option>
+        <option value="Química clínica">Química clínica</option>
+        <option value="Microbiología">Microbiología</option>
+      </select>
+      <select id="urgenciaFilter">
+        <option value="">Urgencia</option>
+        <option value="Alta">Alta</option>
+        <option value="Media">Media</option>
+        <option value="Baja">Baja</option>
+      </select>
+    </div>
+    <ul id="examList"></ul>
+  </aside>
+
+  <main class="content">
+    <div id="detailCard" class="card hidden">
+      <div class="card-header">
+        <h1 id="d-name">Nombre del Estudio</h1>
+        <div class="badge-container">
+          <span id="d-area" class="badge area"></span>
+          <span id="d-urgencia" class="badge"></span>
+        </div>
+      </div>
+      
+      <div class="grid-details">
+        <div class="detail-item"><strong>Muestra</strong><p id="d-muestra"></p></div>
+        <div class="detail-item"><strong>Tubo</strong><p><span id="d-tubo" class="tubo-badge"></span></p></div>
+        <div class="detail-item"><strong>Toma de Muestra</strong><p id="d-toma"></p></div>
+        <div class="detail-item"><strong>Ayuno</strong><p id="d-ayuno"></p></div>
+        <div class="detail-item"><strong>Centrifugar</strong><p id="d-centrifugar"></p></div>
+        <div class="detail-item"><strong>Separar</strong><p id="d-separar"></p></div>
+        <div class="detail-item"><strong>Procesamiento</strong><p id="d-procesamiento"></p></div>
+      </div>
+      
+      <div class="obs-box">
+        <strong><i class="fas fa-info-circle"></i> Observaciones Pre-analíticas</strong>
+        <p id="d-obs"></p>
+      </div>
+    </div>
+  </main>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
