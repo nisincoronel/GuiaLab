@@ -1,7 +1,8 @@
+let pedidoActual = [];
 const determinaciones = [
   // SECTOR HEMATOLOGÍA
  { nombre: "Eritrosedimentación", area: "Hematología", muestra: "Sangre entera con EDTA", tubo: "Lila (EDTA)", toma: "Ayuno 8hs", urgencia: "Media", procesamiento: "Dentro de las 4hs", obs: "Temperatura ambiente." },
-  { nombre: "Hemograma", area: "Hematología", muestra: "Sangre entera con EDTA", tubo: "Lila (EDTA)", toma: "Ayuno 8hs", urgencia: "Alta", procesamiento: "Dentro de las 4hs", obs: "Temperatura ambiente." },
+  { nombre: "Hemograma", area: "Hematología", muestra: "Sangre entera con EDTA", tubo: "Lila (EDTA)", toma: "Ayuno 8hs", urgencia: "Alta", procesamiento: "Dentro de las 4hs", obs: "Conservación Temperatura ambiente." },
   { nombre: "Gota Gruesa", area: "Hematología", muestra: "Punción capilar", tubo: "Extendido", toma: "Ayuno 8hs", urgencia: "Alta", procesamiento: "Inmediato", obs: "Enviar en recipiente seco (sin hielo)." },
   { nombre: "Recuento de reticulocitos", area: "Hematología", muestra: "Sangre entera con EDTA", tubo: "Lila (EDTA)", toma: "Ayuno 8hs", urgencia: "Media", procesamiento: "Antes de 1h", obs: "Procesar en el momento o antes de la hora de extracción." },
   
@@ -43,14 +44,25 @@ const determinaciones = [
   { nombre: "Exudado Vaginal / Endocervical", area: "Microbiología", muestra: "Secreción vaginal", tubo: "Hisopo con medio de transporte", toma: "48 hs sin relaciones ni óvulos", urgencia: "Baja", procesamiento: "12 hs", obs: "No realizar higiene profunda previa." }
 ];
 
+// Inyectar el contenedor del pedido dinámicamente si no existe
+if (!document.getElementById('pedido-status')) {
+    const pedidoHTML = `
+        <div id="pedido-status" class="pedido-container">
+            <span><i class="fas fa-list"></i> Pedido: <strong id="contador-pedido">0</strong></span>
+            <div>
+                <button onclick="enviarWhatsApp()" class="btn-ws"><i class="fab fa-whatsapp"></i> Enviar</button>
+                <button onclick="vaciarPedido()" class="btn-clear"><i class="fas fa-trash"></i></button>
+            </div>
+        </div>`;
+    document.querySelector('.search-section').insertAdjacentHTML('beforebegin', pedidoHTML);
+}
+
 function render() {
     const list = document.getElementById("examList");
     const search = document.getElementById("searchInput").value.toLowerCase();
     const areaFilter = document.getElementById("areaSelect").value;
-    
     list.innerHTML = "";
 
-    // No mostrar nada si no hay búsqueda activa
     if (search.trim() === "" && areaFilter === "") return;
 
     const filtered = determinaciones.filter(d => {
@@ -61,12 +73,31 @@ function render() {
 
     filtered.forEach(d => {
         const li = document.createElement("li");
+        
+        // 1. Lógica de colores de tubos (Visual)
+        let codigoColor = "#bdc3c7"; // Gris por defecto
+        const tubo = d.tubo.toLowerCase();
+        if (tubo.includes("lila")) codigoColor = "#9b59b6";
+        if (tubo.includes("celeste")) codigoColor = "#3498db";
+        if (tubo.includes("rojo") || tubo.includes("amarillo")) codigoColor = "#e74c3c";
+        if (tubo.includes("estéril") || tubo.includes("verde")) codigoColor = "#2ecc71";
+        if (tubo.includes("gris")) codigoColor = "#7f8c8d";
+
+        // 2. Lógica de Urgencia (Semaforización)
+        // Usamos d.urgencia porque así lo tenés en tu objeto
+        const nivelUrgencia = d.urgencia ? d.urgencia.toLowerCase() : "baja";
+        const claseUrgencia = `urgencia-${nivelUrgencia}`;
+
         li.innerHTML = `
-            <div>
-                <strong style="color:#2c3e50">${d.nombre}</strong><br>
-                <small style="color:#3498db">${d.area}</small>
+            <div style="display: flex; align-items: center;">
+                <div class="tubo-color" style="background-color: ${codigoColor}"></div>
+                <div>
+                    <strong>${d.nombre}</strong>
+                    <span class="badge ${claseUrgencia}">${d.urgencia || 'Rutina'}</span>
+                    <br><small style="color:#7f8c8d">${d.area}</small>
+                </div>
             </div>
-            <i class="fas fa-chevron-right" style="color:#bdc3c7"></i>
+            <i class="fas fa-chevron-right" style="color:#eee"></i>
         `;
         li.onclick = () => mostrarDetalle(d);
         list.appendChild(li);
@@ -77,28 +108,85 @@ function mostrarDetalle(d) {
     const modal = document.getElementById("modal");
     const modalData = document.getElementById("modalData");
     
+    // Preparar los datos técnicos para la tarjeta visual
+    const centrifugado = d.centrifugar ? d.centrifugar : "No requiere / No especifica";
+    const separacion = d.separar ? d.separar : "No requiere / No especifica";
+
     modalData.innerHTML = `
-        <h2 style="color:#3498db; margin-top:0">${d.nombre}</h2>
+        <h2 style="color:#3498db; margin:0 0 10px 0">${d.nombre}</h2>
         <p><strong>Sector:</strong> ${d.area}</p>
+        <p><strong>Tubo:</strong> <span style="background:#eee; padding:2px 6px; border-radius:4px; font-weight:bold;">${d.tubo}</span></p>
         <p><strong>Muestra:</strong> ${d.muestra}</p>
-        <p><strong>Tubo:</strong> ${d.tubo}</p>
-        <p><strong>Toma de muestra:</strong> ${d.toma}</p>
-        <p><strong>Estabilidad:</strong> ${d.procesamiento}</p>
-        <hr>
-        <p style="background:#f9f9f9; padding:10px; border-radius:8px; font-style:italic">
-            <strong>Obs:</strong> ${d.obs}
-        </p>
+        
+        <div style="background:#f8f9fa; padding:12px; border-radius:10px; margin:10px 0; font-size:0.9em; border-left: 4px solid #3498db;">
+            <p style="margin:0 0 5px 0"><strong>⚙️ PROCESAMIENTO TÉCNICO:</strong></p>
+            <p><strong>Centrifugar:</strong> ${centrifugado}</p>
+            <p><strong>Separar:</strong> ${separacion}</p>
+            <p><strong>Estabilidad:</strong> ${d.procesamiento}</p>
+        </div>
+
+        <div style="background:#fff3cd; padding:10px; border-radius:10px; margin:10px 0; font-size:0.9em;">
+            <p style="margin:0"><strong>📋 PREPARACIÓN PACIENTE:</strong></p>
+            <p style="margin:5px 0 0 0">${d.toma} ${d.ayuno || ''}</p>
+        </div>
+
+        <p style="font-size:0.85em; color:#e67e22"><strong>⚠️ Obs:</strong> ${d.obs}</p>
+        
+        <button onclick='agregarAlPedido(${JSON.stringify(d)})' style="width:100%; background:#3498db; color:white; border:none; padding:12px; border-radius:10px; font-weight:bold; margin-top:10px; cursor:pointer;">
+            + Agregar al Pedido
+        </button>
     `;
     modal.style.display = "block";
 }
 
-// Cerrar modal
-document.querySelector(".close").onclick = () => document.getElementById("modal").style.display = "none";
-window.onclick = (event) => {
-    if (event.target == document.getElementById("modal")) {
-        document.getElementById("modal").style.display = "none";
+function agregarAlPedido(estudio) {
+    if (!pedidoActual.some(e => e.nombre === estudio.nombre)) {
+        pedidoActual.push(estudio);
+        actualizarInterfaz();
     }
+    cerrarModal();
 }
+
+function actualizarInterfaz() {
+    const status = document.getElementById("pedido-status");
+    document.getElementById("contador-pedido").innerText = pedidoActual.length;
+    status.style.display = pedidoActual.length > 0 ? "flex" : "none";
+}
+
+function vaciarPedido() { pedidoActual = []; actualizarInterfaz(); }
+
+function enviarWhatsApp() {
+    if (pedidoActual.length === 0) return;
+
+    let mensaje = "*INDICACIONES PARA TU ESTUDIO DE LABORATORIO* 🔬\n";
+    mensaje += "================================\n\n";
+    mensaje += "Hola, para que podamos realizar tus análisis correctamente, por favor seguí estas instrucciones:\n\n";
+
+    pedidoActual.forEach((est, index) => {
+        mensaje += `✅ *${est.nombre.toUpperCase()}*\n`;
+        
+        // Solo enviamos preparación y recolección
+        mensaje += `• *Preparación:* ${est.toma} ${est.ayuno || ''}\n`;
+        
+        // Si hay observaciones (donde solemos poner cómo recolectar), las sumamos
+        if(est.obs) mensaje += `• *Importante:* ${est.obs}\n`;
+        
+        mensaje += "--------------------------------\n";
+    });
+
+    mensaje += "\n📍 *Posadas, Misiones*\n";
+    mensaje += "_Por favor, recordá traer tu DNI y la orden médica._";
+
+    // Codificar y abrir WhatsApp
+    const textoCodificado = encodeURIComponent(mensaje);
+    window.open(`https://wa.me/?text=${textoCodificado}`, '_blank');
+}
+
+function cerrarModal() { document.getElementById("modal").style.display = "none"; }
+
+// Cerrar con la X o haciendo clic fuera
+document.querySelector(".close").onclick = cerrarModal;
+window.onclick = (e) => { if (e.target == document.getElementById("modal")) cerrarModal(); };
 
 // Listeners
 document.getElementById("searchInput").addEventListener("input", render);
