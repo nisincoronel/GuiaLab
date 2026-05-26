@@ -1,4 +1,6 @@
-const CACHE_NAME = 'guialab-cache-v1';
+// 1. CAMBIAMOS A V2:
+const CACHE_NAME = 'guialab-cache-v2';
+
 const assets = [
   './',
   './index.html',
@@ -10,27 +12,29 @@ const assets = [
 
 // Instalación: Guarda los archivos en el dispositivo
 self.addEventListener('install', event => {
+  // Fuerza al nuevo Service Worker a activarse inmediatamente sin esperar a que se cierre la app
+  self.skipWaiting(); 
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      console.log('Cache OK: Archivos guardados');
+      console.log('Cache OK: Archivos guardados en v2');
       return cache.addAll(assets);
     })
   );
 });
 
-// Activación: Borra el caché viejo si cambias el CACHE_NAME (v1 -> v2)
+// Activación: Borra automáticamente el caché viejo (v1) gracias a tu lógica
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cache => {
           if (cache !== CACHE_NAME) {
-            console.log('Limpiando versiones antiguas');
+            console.log('Limpiando versiones antiguas (Adiós v1)');
             return caches.delete(cache);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Toma el control de la app al toque
   );
 });
 
