@@ -234,22 +234,28 @@ nombre: "Tiempo de Protrombina (TP / TPCS2)", area: "Hemostasia", muestra: "Plas
 { nombre: "Antígenos de Galactomananos (galacto)", area: "Microbiología", muestra: "Suero o LBA (Lavado Broncoalveolar)", tubo: "Rojo/Amarillo o Frasco Estéril", toma: "Punción venosa / Procedimiento médico", urgencia: "Alta", ayuno: "8 hs (para suero)", centrifugar: "Sí (Suero)", separar: "Sí (Suero)", procesamiento: "Especial", obs: "CRÍTICO: Pacientes neutropénicos febriles. Solo se recibe con la firma y autorización obligatoria del servicio de INFECTOLOGÍA." },
 { nombre: "Antigenuria de Histoplasma (aghisto)", area: "Microbiología", muestra: "Orina (Chorro Medio)", tubo: "Frasco Estéril", toma: "Primera orina de la mañana con 4 hs de retención mínima", urgencia: "Alta", ayuno: "No requiere", centrifugar: "No", separar: "No", procesamiento: "Especial", obs: "CRÍTICO: Enviar muestra refrigerada de forma inmediata. Solo se recibe con la firma y autorización obligatoria del servicio de INFECTOLOGÍA." },
 { nombre: "Antígeno de Cryptococcus (agcrypto)", area: "Microbiología", muestra: "Suero o LCR", tubo: "Rojo/Amarillo o Tubo Estéril", toma: "Punción venosa / Punción lumbar", urgencia: "Alta", ayuno: "8 hs (para suero)", centrifugar: "Sí (Suero)", separar: "Sí (Suero)", procesamiento: "Especial", obs: "CRÍTICO: Orientado a pacientes con VIH o inmunodeprimidos. Solo se recibe con la firma y autorización obligatoria del servicio de INFECTOLOGÍA." },
-{ nombre: "Sensibilidad a Antifúngicos en Levaduras (ATF)", area: "Microbiología", muestra: "Cepas de levaduras aisladas (Candida spp.)", tubo: "Tubo con medio de cultivo de aislamiento", toma: "Derivación interna de colonia positiva", urgencia: "Baja", ayuno: "No aplica", centrifugar: "No", separar: "No", procesamiento: "Especial", obs: "Estudio de resistencia auxanográfica o automatizada sobre aislamientos microbiológicos previos." }
-];
+{ nombre: "Sensibilidad a Antifúngicos en Levaduras (ATF)", area: "Microbiología", muestra: "Cepas de levaduras aisladas (Candida spp.)", tubo: "Tubo con medio de cultivo de aislamiento", toma: "Derivación interna de colonia positiva", urgencia: "Baja", ayuno: "No aplica", centrifugar: "No", separar: "No", procesamiento: "Especial", obs: "Estudio de resistencia auxanográfica o automatizada sobre aislamientos microbiológicos previos." } // 
+]; // 
+  
 
-// Inyectar el contenedor del pedido dinámicamente si no existe
+// Inyectar el contenedor del pedido dinámicamente si no existe (Con diseño mejorado)
 if (!document.getElementById('pedido-status')) {
     const pedidoHTML = `
         <div id="pedido-status" class="pedido-container">
-            <span><i class="fas fa-list"></i> Pedido: <strong id="contador-pedido">0</strong></span>
+            <span><i class="fas fa-clipboard-list"></i> Pedido: <strong id="contador-pedido">0</strong></span>
             <div>
-                <button onclick="enviarWhatsApp()" class="btn-ws"><i class="fab fa-whatsapp"></i> Enviar</button>
-                <button onclick="vaciarPedido()" class="btn-clear"><i class="fas fa-trash"></i></button>
+                <button onclick="enviarWhatsApp()" class="btn-ws">
+                    <i class="fab fa-whatsapp"></i> Enviar Indicaciones
+                </button>
+                <button onclick="vaciarPedido()" class="btn-clear">
+                    <i class="fas fa-trash"></i>
+                </button>
             </div>
         </div>`;
     document.querySelector('.search-section').insertAdjacentHTML('beforebegin', pedidoHTML);
 }
 
+// 1. RENDERIZADO DE LA LISTA DE EXÁMENES (Estilo Tarjeta)
 function render() {
     const list = document.getElementById("examList");
     const search = document.getElementById("searchInput").value.toLowerCase();
@@ -258,6 +264,7 @@ function render() {
 
     if (search.trim() === "" && areaFilter === "") return;
 
+    // Filtrado de determinaciones
     const filtered = determinaciones.filter(d => {
         const matchText = d.nombre.toLowerCase().includes(search);
         const matchArea = areaFilter === "" || d.area === areaFilter;
@@ -267,71 +274,133 @@ function render() {
     filtered.forEach(d => {
         const li = document.createElement("li");
         
-        // 1. Lógica de colores de tubos (Visual)
-        let codigoColor = "#bdc3c7"; // Gris por defecto
-        const tubo = d.tubo.toLowerCase();
-        if (tubo.includes("lila")) codigoColor = "#9b59b6";
-        if (tubo.includes("celeste")) codigoColor = "#3498db";
-        if (tubo.includes("rojo") || tubo.includes("amarillo")) codigoColor = "#e74c3c";
-        if (tubo.includes("estéril") || tubo.includes("verde")) codigoColor = "#2ecc71";
-        if (tubo.includes("gris")) codigoColor = "#7f8c8d";
+        // Asignación automática de clases para los colores de tubos en base al texto
+        let claseTubo = "color-rojo"; // Por defecto
+        const tuboTexto = (d.tubo || "").toLowerCase();
+        
+        if (tuboTexto.includes("lila") || tuboTexto.includes("edta")) claseTubo = "color-lila";
+        else if (tuboTexto.includes("celeste") || tuboTexto.includes("citrato 1:9")) claseTubo = "color-celeste";
+        else if (tuboTexto.includes("negro") || tuboTexto.includes("citrato 1:4")) claseTubo = "color-negro";
+        else if (tuboTexto.includes("verde") || tuboTexto.includes("heparina")) claseTubo = "color-verde";
+        else if (tuboTexto.includes("frasco") || tuboTexto.includes("estéril") || tuboTexto.includes("materia")) claseTubo = "color-esteril";
 
-        // 2. Lógica de Urgencia (Semaforización)
-        // Usamos d.urgencia porque así lo tenés en tu objeto
+        // Semaforización de Urgencias usando tus clases CSS
         const nivelUrgencia = d.urgencia ? d.urgencia.toLowerCase() : "baja";
         const claseUrgencia = `urgencia-${nivelUrgencia}`;
 
+        // Construcción de la tarjeta de la lista alineada al nuevo CSS
         li.innerHTML = `
-            <div style="display: flex; align-items: center;">
-                <div class="tubo-color" style="background-color: ${codigoColor}"></div>
+            <div class="wrapper-izquierdo">
+                <span class="tubo-color ${claseTubo}"></span>
                 <div>
-                    <strong>${d.nombre}</strong>
+                    <strong style="display: inline-block; margin-bottom: 2px;">${d.nombre}</strong>
                     <span class="badge ${claseUrgencia}">${d.urgencia || 'Rutina'}</span>
-                    <br><small style="color:#7f8c8d">${d.area}</small>
+                    <br><small style="color: #64748b; font-weight: 500;"><i class="fas fa-tags" style="font-size:0.75rem;"></i> ${d.area}</small>
                 </div>
             </div>
-            <i class="fas fa-chevron-right" style="color:#eee"></i>
+            <i class="fas fa-chevron-right" style="color: #cbd5e1; font-size: 0.9rem;"></i>
         `;
+        
         li.onclick = () => mostrarDetalle(d);
         list.appendChild(li);
     });
 }
 
+// 2. DETALLE DEL MODAL PREMIUM CON SISTEMA DE PESTAÑAS INTERACTIVAS
 function mostrarDetalle(d) {
     const modal = document.getElementById("modal");
     const modalData = document.getElementById("modalData");
     
-    // Preparar los datos técnicos para la tarjeta visual
     const centrifugado = d.centrifugar ? d.centrifugar : "No requiere / No especifica";
     const separacion = d.separar ? d.separar : "No requiere / No especifica";
 
+    // Detectar color de tubo para la cabecera
+    let claseTuboModal = "color-rojo";
+    const tTexto = (d.tubo || "").toLowerCase();
+    if (tTexto.includes("lila") || tTexto.includes("edta")) claseTuboModal = "color-lila";
+    else if (tTexto.includes("celeste")) claseTuboModal = "color-celeste";
+    else if (tTexto.includes("negro")) claseTuboModal = "color-negro";
+    else if (tTexto.includes("verde")) claseTuboModal = "color-verde";
+    else if (tTexto.includes("frasco") || tTexto.includes("estéril") || tTexto.includes("materia")) claseTuboModal = "color-esteril";
+
     modalData.innerHTML = `
-        <h2 style="color:#3498db; margin:0 0 10px 0">${d.nombre}</h2>
-        <p><strong>Sector:</strong> ${d.area}</p>
-        <p><strong>Tubo:</strong> <span style="background:#eee; padding:2px 6px; border-radius:4px; font-weight:bold;">${d.tubo}</span></p>
-        <p><strong>Muestra:</strong> ${d.muestra}</p>
-        
-        <div style="background:#f8f9fa; padding:12px; border-radius:10px; margin:10px 0; font-size:0.9em; border-left: 4px solid #3498db;">
-            <p style="margin:0 0 5px 0"><strong>⚙️ PROCESAMIENTO TÉCNICO:</strong></p>
-            <p><strong>Centrifugar:</strong> ${centrifugado}</p>
-            <p><strong>Separar:</strong> ${separacion}</p>
-            <p><strong>Estabilidad:</strong> ${d.procesamiento}</p>
+        <div class="modal-header-analisis" style="margin-bottom: 12px;">
+            <h2 class="modal-title">${d.nombre}</h2>
+            <div style="display: flex; gap: 12px; align-items: center; margin-top: 6px; flex-wrap: wrap;">
+                <span class="modal-sector">${d.area}</span>
+                <span style="font-size: 0.85rem; font-weight: 700; color: #475569; display: inline-flex; align-items: center;">
+                    <span class="tubo-color ${claseTuboModal}" style="margin-right: 6px;"></span> 
+                    ${d.tubo}
+                </span>
+            </div>
         </div>
 
-        <div style="background:#fff3cd; padding:10px; border-radius:10px; margin:10px 0; font-size:0.9em;">
-            <p style="margin:0"><strong>📋 PREPARACIÓN PACIENTE:</strong></p>
-            <p style="margin:5px 0 0 0">${d.toma} ${d.ayuno || ''}</p>
+        <div class="modal-tabs">
+            <button class="tab-btn active tab-paciente" onclick="cambiarPestaña('paciente')">
+                <i class="fas fa-user"></i> Paciente
+            </button>
+            <button class="tab-btn tab-tecnico" onclick="cambiarPestaña('tecnico')">
+                <i class="fas fa-flask"></i> Técnico
+            </button>
         </div>
 
-        <p style="font-size:0.85em; color:#e67e22"><strong>⚠️ Obs:</strong> ${d.obs}</p>
-        
-        <button onclick='agregarAlPedido(${JSON.stringify(d)})' style="width:100%; background:#3498db; color:white; border:none; padding:12px; border-radius:10px; font-weight:bold; margin-top:10px; cursor:pointer;">
-            + Agregar al Pedido
+        <div id="tab-paciente-content" class="tab-content active">
+            <div class="seccion-modal-paciente" style="margin-bottom: 16px;">
+                <h3 class="modal-subtitulo paciente" style="margin-bottom: 8px;"><i class="fas fa-user-check"></i> Preparación y Ayuno</h3>
+                <p class="modal-texto">
+                    <strong>Ayuno requerido:</strong> ${d.ayuno || "No requiere ayuno."}<br><br>
+                    ${d.prepPaciente || `${d.toma} ${d.ayuno || ''}`}
+                </p>
+            </div>
+        </div>
+
+        <div id="tab-tecnico-content" class="tab-content">
+            <div class="seccion-modal-tecnico" style="margin-bottom: 16px;">
+                <h3 class="modal-subtitulo tecnico" style="margin-bottom: 8px;"><i class="fas fa-vial"></i> Control de Procesamiento</h3>
+                <p class="modal-texto">
+                    <strong>Muestra biológica:</strong> ${d.muestra}<br>
+                    <strong>Centrifugar:</strong> ${centrifugado}<br>
+                    <strong>Separar suero/plasma:</strong> ${separacion}<br>
+                    <strong>Estabilidad / Conservación:</strong> ${d.procesamiento || "No especifica."}
+                </p>
+                
+                ${d.obsTecnicas || d.obs ? `
+                    <div class="alerta-tecnica" style="margin-top: 12px; background-color: #fffbeb; border: 1px solid #fef3c7; color: #92400e; font-size: 0.8rem; padding: 10px; border-radius: 8px;">
+                        <i class="fas fa-exclamation-triangle"></i> <strong>Manejo de Mesada:</strong> ${d.obsTecnicas || d.obs}
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+
+        <button onclick='agregarAlPedido(${JSON.stringify(d).replace(/"/g, '&quot;')})' class="btn-whatsapp-premium" style="background-color: var(--primary); box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);">
+            <i class="fas fa-plus"></i> Añadir a la Orden de WhatsApp
         </button>
     `;
-    modal.style.display = "block";
+    
+    modal.style.display = "flex";
 }
 
+// FUNCIÓN AUXILIAR INTERACTIVA PARA INTERCAMBIAR LAS PESTAÑAS
+function cambiarPestaña(tipo) {
+    const btnPaciente = document.querySelector('.tab-btn.tab-paciente');
+    const btnTecnico = document.querySelector('.tab-btn.tab-tecnico');
+    const contentPaciente = document.getElementById('tab-paciente-content');
+    const contentTecnico = document.getElementById('tab-tecnico-content');
+
+    if (tipo === 'paciente') {
+        btnPaciente.classList.add('active');
+        contentPaciente.classList.add('active');
+        btnTecnico.classList.remove('active');
+        contentTecnico.classList.remove('active');
+    } else {
+        btnTecnico.classList.add('active');
+        contentTecnico.classList.add('active');
+        btnPaciente.classList.remove('active');
+        contentPaciente.classList.remove('active');
+    }
+}
+
+// 3. LOGICA DEL COMPORTAMIENTO DEL PEDIDO, WHATSAPP Y TXT
 function agregarAlPedido(estudio) {
     if (!pedidoActual.some(e => e.nombre === estudio.nombre)) {
         pedidoActual.push(estudio);
@@ -346,41 +415,92 @@ function actualizarInterfaz() {
     status.style.display = pedidoActual.length > 0 ? "flex" : "none";
 }
 
-function vaciarPedido() { pedidoActual = []; actualizarInterfaz(); }
+function vaciarPedido() { 
+    pedidoActual = []; 
+    actualizarInterfaz(); 
+}
 
 function enviarWhatsApp() {
     if (pedidoActual.length === 0) return;
 
-    let mensaje = "*INDICACIONES PARA TU ESTUDIO DE LABORATORIO* 🔬\n";
-    mensaje += "================================\n\n";
-    mensaje += "Hola, para que podamos realizar tus análisis correctamente, por favor seguí estas instrucciones:\n\n";
+    let mensaje = "*GUÍALAB - INDICACIONES PARA TUS ESTUDIOS* 🔬\n";
+    mensaje += "========================================\n\n";
+    mensaje += "Hola, para garantizar la validez de los resultados de tus análisis clínicos, por favor seguí minuciosamente estas instrucciones previas:\n\n";
 
     pedidoActual.forEach((est, index) => {
-        mensaje += `✅ *${est.nombre.toUpperCase()}*\n`;
+        mensaje += `📌 *${est.nombre.toUpperCase()}*\n`;
         
-        // Solo enviamos preparación y recolección
-        mensaje += `• *Preparación:* ${est.toma} ${est.ayuno || ''}\n`;
+        if (est.prepPaciente) {
+            mensaje += `• *Preparación:* ${est.prepPaciente}\n`;
+            if (est.ayuno && est.ayuno.toLowerCase() !== "no requiere") {
+                mensaje += `• *Ayuno:* ${est.ayuno}\n`;
+            }
+        } else {
+            mensaje += `• *Preparación:* ${est.toma} ${est.ayuno || ''}\n`;
+            if (est.obs) mensaje += `• *Nota Importante:* ${est.obs}\n`;
+        }
         
-        // Si hay observaciones (donde solemos poner cómo recolectar), las sumamos
-        if(est.obs) mensaje += `• *Importante:* ${est.obs}\n`;
-        
-        mensaje += "--------------------------------\n";
+        mensaje += "----------------------------------------\n";
     });
 
     mensaje += "\n📍 *Posadas, Misiones*\n";
-    mensaje += "_Por favor, recordá traer tu DNI y la orden médica._";
+    mensaje += "_Recordá presentarte en el horario de extracción asignado con tu DNI y la Orden Médica correspondiente._";
 
-    // Codificar y abrir WhatsApp
     const textoCodificado = encodeURIComponent(mensaje);
     window.open(`https://wa.me/?text=${textoCodificado}`, '_blank');
 }
 
-function cerrarModal() { document.getElementById("modal").style.display = "none"; }
+// NUEVA FUNCIÓN: Generación Dinámica y Descarga de Archivo TXT
+function descargarTXT() {
+    if (pedidoActual.length === 0) return;
 
-// Cerrar con la X o haciendo clic fuera
-document.querySelector(".close").onclick = cerrarModal;
-window.onclick = (e) => { if (e.target == document.getElementById("modal")) cerrarModal(); };
+    let texto = "========================================\n";
+    texto += "   GUÍALAB - INDICACIONES DE LABORATORIO\n";
+    texto += "========================================\n\n";
+    texto += "Hola, para garantizar la validez de los resultados de tus análisis clínicos, por favor seguí minuciosamente estas instrucciones previas:\n\n";
 
-// Listeners
+    pedidoActual.forEach((est, index) => {
+        texto += `📌 [${index + 1}] ${est.nombre.toUpperCase()}\n`;
+        
+        if (est.prepPaciente) {
+            texto += `   • Preparación: ${est.prepPaciente}\n`;
+            if (est.ayuno && est.ayuno.toLowerCase() !== "no requiere") {
+                texto += `   • Ayuno: ${est.ayuno}\n`;
+            }
+        } else {
+            texto += `   • Preparación: ${est.toma} ${est.ayuno || ''}\n`;
+            if (est.obs) texto += `   • Nota Importante: ${est.obs}\n`;
+        }
+        
+        texto += "----------------------------------------\n";
+    });
+
+    texto += "\n📍 Posadas, Misiones\n";
+    texto += "Recordá presentarte en el horario de extracción asignado con tu DNI y la Orden Médica correspondiente.";
+
+    // Conversión de datos planos a objeto Blob descargable
+    const blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
+    
+    // Disparador invisible de descarga en el navegador
+    const enlace = document.createElement("a");
+    enlace.href = URL.createObjectURL(blob);
+    enlace.download = `indicaciones-laboratorio.txt`;
+    
+    document.body.appendChild(enlace);
+    enlace.click();
+    document.body.removeChild(enlace);
+}
+
+// 4. CONTROLADORES DE CIERRE DEL MODAL
+function cerrarModal() { 
+    document.getElementById("modal").style.display = "none"; 
+}
+
+document.getElementById("closeModal").onclick = cerrarModal;
+window.onclick = (e) => { 
+    if (e.target == document.getElementById("modal")) cerrarModal(); 
+};
+
+// Event Listeners vinculados
 document.getElementById("searchInput").addEventListener("input", render);
 document.getElementById("areaSelect").addEventListener("change", render);
