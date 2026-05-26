@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,9 @@
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,16 +20,21 @@
     <div class="app-container">
         <header>
             <h1>GuíaLab Pre-Analítica</h1>
-            <p>Manual de Gestión | Posadas, Misiones</p>
+            <p><i class="fas fa-map-marker-alt"></i> Manual de Gestión | Posadas, Misiones</p>
         </header>
 
         <div id="pedido-status" class="pedido-container" style="display: none;">
             <span><i class="fas fa-clipboard-list"></i> Pedido: <strong id="contador-pedido">0</strong></span>
             <div>
-                <button onclick="enviarWhatsApp()" class="btn-ws">
+                <button onclick="enviarWhatsApp()" class="btn-ws" title="Enviar por WhatsApp">
                     <i class="fab fa-whatsapp"></i> Enviar
                 </button>
-                <button onclick="vaciarPedido()" class="btn-clear">
+                
+                <button onclick="descargarTXT()" class="btn-txt" style="background: #0284c7; color: white; border: none; padding: 10px 14px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-right: 4px; transition: background 0.2s;" title="Descargar indicaciones en TXT">
+                    <i class="fas fa-file-download"></i> TXT
+                </button>
+                
+                <button onclick="vaciarPedido()" class="btn-clear" title="Vaciar Pedido">
                     <i class="fas fa-trash"></i>
                 </button>
             </div>
@@ -34,22 +43,23 @@
         <section class="search-section">
             <div class="input-group">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Buscar determinación...">
+                <input type="text" id="searchInput" placeholder="Buscar determinación o análisis...">
             </div>
             
-            <select id="areaSelect">
-    <option value="">Todos los sectores</option>
-    <option value="Hematología">🔬 Hematología</option>
-    <option value="Hemostasia">🩸 Hemostasia</option>
-    <option value="Microbiología">🧫 Microbiología</option>
-    <option value="Química clínica">🧪 Química Clínica</option> 
-    <option value="Endocrinología">🧬 Endocrinología</option>
-    <option value="Serología">💉 Serología</option>
-    <option value="Orina">🚽 Orina</option>
-    <option value="Parasitología">🦠 Parasitología</option>
-    <option value="Pesquisa Neonatal">🐰 Pesquisa Neonatal</option>
-    <option value="Autoinmunidad">🧩 Autoinmunidad</option>
-</select>
+            <div class="select-group">
+                <select id="areaSelect">
+                    <option value="">🔬 Todos los sectores</option>
+                    <option value="Hematología">🔬 Hematología</option>
+                    <option value="Hemostasia">🩸 Hemostasia</option>
+                    <option value="Microbiología">🧫 Microbiología</option>
+                    <option value="Química clínica">🧪 Química Clínica</option> 
+                    <option value="Endocrinología">🧬 Endocrinología</option>
+                    <option value="Serología">💉 Serología</option>
+                    <option value="Orina">🚽 Orina</option>
+                    <option value="Parasitología">🦠 Parasitología</option>
+                    <option value="Pesquisa Neonatal">🐰 Pesquisa Neonatal</option>
+                    <option value="Autoinmunidad">🧩 Autoinmunidad</option>
+                </select>
             </div>
         </section>
 
@@ -71,7 +81,7 @@
             <a href="https://wa.me/+5493765127562" 
                target="_blank" 
                rel="noopener noreferrer" 
-               style="text-decoration: none; background: #25d366; color: white; padding: 10px 20px; border-radius: 25px; font-size: 0.85em; display: inline-block; margin-top: 15px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+               style="text-decoration: none; background: #25d366; color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.85em; display: inline-block; margin-top: 18px; font-weight: bold; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.25); transition: all 0.2s;">
                 <i class="fab fa-whatsapp"></i> Consultas Profesionales
             </a>
         </footer>
