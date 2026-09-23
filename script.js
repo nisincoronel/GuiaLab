@@ -409,6 +409,104 @@ function render() {
 
 
 // ============================================================
+// MODO ESTUDIANTE - DESAFÍO INTERACTIVO
+// ============================================================
+
+function crearDesafioEstudiante(d) {
+    const respuestas = [
+        {
+            icono: "fa-vial",
+            pregunta: "¿Qué muestra biológica utilizarías?",
+            respuesta: d.muestra || "La base no especifica una muestra."
+        },
+        {
+            icono: "fa-droplet",
+            pregunta: "¿Qué tubo corresponde?",
+            respuesta: d.tubo || "La base no especifica el tubo."
+        },
+        {
+            icono: "fa-utensils",
+            pregunta: "¿Requiere ayuno o alguna preparación especial?",
+            respuesta: d.ayuno || d.prepPaciente || "No se especifica ayuno o preparación especial."
+        },
+        {
+            icono: "fa-gears",
+            pregunta: "¿Cómo debe procesarse o conservarse?",
+            respuesta: d.procesamiento || "La base no especifica el procesamiento."
+        }
+    ];
+
+    return `
+        <section class="student-challenge" aria-label="Desafío de estudio">
+            <div class="student-challenge-head">
+                <div class="student-challenge-badge"><i class="fas fa-graduation-cap"></i></div>
+                <div>
+                    <span class="student-overline">Desafío de estudio</span>
+                    <h3>Antes de mirar la ficha...</h3>
+                    <p>Intentá responder mentalmente y después revelá cada respuesta.</p>
+                </div>
+            </div>
+
+            <div class="student-question-list">
+                ${respuestas.map((item, index) => `
+                    <article class="student-question" id="studentQuestion${index}">
+                        <div class="student-question-icon"><i class="fas ${item.icono}"></i></div>
+                        <div class="student-question-body">
+                            <strong>${escaparHTML(item.pregunta)}</strong>
+                            <div class="student-answer" hidden>${escaparHTML(item.respuesta)}</div>
+                        </div>
+                        <button type="button" class="reveal-answer" onclick="revelarRespuestaEstudiante(this)">
+                            <i class="fas fa-eye"></i><span>Revelar</span>
+                        </button>
+                    </article>
+                `).join("")}
+            </div>
+
+            <div class="student-challenge-actions">
+                <button type="button" class="student-reveal-all" onclick="revelarTodasRespuestas()">
+                    <i class="fas fa-lightbulb"></i> Revelar todas
+                </button>
+                <button type="button" class="student-see-file" onclick="mostrarFichaCompletaEstudiante()">
+                    Ver ficha completa <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </section>
+    `;
+}
+
+function revelarRespuestaEstudiante(button) {
+    const question = button.closest(".student-question");
+    const answer = question?.querySelector(".student-answer");
+    if (!answer) return;
+
+    const visible = !answer.hidden;
+    answer.hidden = visible;
+    button.classList.toggle("revealed", !visible);
+    button.innerHTML = visible
+        ? '<i class="fas fa-eye"></i><span>Revelar</span>'
+        : '<i class="fas fa-eye-slash"></i><span>Ocultar</span>';
+}
+
+function revelarTodasRespuestas() {
+    document.querySelectorAll(".student-question").forEach(question => {
+        const answer = question.querySelector(".student-answer");
+        const button = question.querySelector(".reveal-answer");
+        if (answer) answer.hidden = false;
+        if (button) {
+            button.classList.add("revealed");
+            button.innerHTML = '<i class="fas fa-eye-slash"></i><span>Ocultar</span>';
+        }
+    });
+}
+
+function mostrarFichaCompletaEstudiante() {
+    const wrap = document.getElementById("studentReferenceWrap");
+    if (!wrap) return;
+    wrap.style.display = "block";
+    wrap.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// ============================================================
 // DETALLE
 // ============================================================
 
@@ -419,6 +517,9 @@ function mostrarDetalle(d) {
 
     const modalData =
         document.getElementById("modalData");
+
+    const modoEstudianteActivo =
+        document.body.classList.contains("student-mode-active");
 
 
     const centrifugado =
@@ -539,6 +640,9 @@ function mostrarDetalle(d) {
 
         </div>
 
+        ${modoEstudianteActivo ? crearDesafioEstudiante(d) : ""}
+
+        <div class="student-reference-wrap" id="studentReferenceWrap" style="${modoEstudianteActivo ? "display:none" : "display:block"};">
 
         <!-- PESTAÑAS -->
 
@@ -768,6 +872,8 @@ function mostrarDetalle(d) {
             </div>
 
         </div>
+
+        </div><!-- /student-reference-wrap -->
 
 
         <!-- BOTÓN PEDIDO -->
