@@ -12,7 +12,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>GuíaLab - Pre-Analítica</title>
+    <title>GuíaLab | Formación y Pre-Analítica</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
     
@@ -27,9 +27,30 @@
 <body>
 
     <div class="app-container">
-        <header>
-            <h1>GuíaLab Pre-Analítica</h1>
-            <p><i class="fas fa-map-marker-alt"></i> Manual de Gestión Beta 1.8 | Posadas, Misiones</p>
+        <header class="dashboard-header">
+            <div class="dashboard-topline">
+                <div class="brand-mini">
+                    <img class="brand-logo" src="logo-guialab.png" alt="GuíaLab">
+                    <div class="brand-copy">
+                        <span class="brand-name">GuíaLab</span>
+                        <span class="brand-subtitle">Pre-Analítica</span>
+                    </div>
+                </div>
+                <span class="online-pill"><i class="fas fa-circle"></i> Activo</span>
+            </div>
+            <div class="dashboard-welcome">
+                <div>
+                    <p class="eyebrow">Panel profesional</p>
+                    <h1>Tu guía de laboratorio, <span>en un solo lugar.</span></h1>
+                    <p>Consultá determinaciones, muestras, tubos y condiciones pre-analíticas rápidamente.</p>
+                </div>
+                <div class="header-symbol"><i class="fas fa-microscope"></i></div>
+            </div>
+            <div class="dashboard-stats" aria-label="Resumen de GuíaLab">
+                <div><i class="fas fa-flask"></i><strong id="statDeterminaciones">—</strong><small>determinaciones</small></div>
+                <div><i class="fas fa-layer-group"></i><strong id="statSectores">10</strong><small>sectores</small></div>
+                <div><i class="fas fa-wifi"></i><strong>OFFLINE</strong><small>modo disponible</small></div>
+            </div>
         </header>
 
         <div id="pedido-status" class="pedido-container" style="display: none;">
@@ -39,7 +60,7 @@
                     <i class="fab fa-whatsapp"></i> Enviar
                 </button>
                 
-                <button onclick="descargarTXT()" class="btn-txt" style="background: #0284c7; color: white; border: none; padding: 10px 14px; border-radius: 10px; font-weight: bold; cursor: pointer; margin-right: 4px; transition: background 0.2s;" title="Descargar indicaciones en TXT">
+                <button onclick="descargarTXT()" class="btn-txt" title="Descargar indicaciones en TXT">
                     <i class="fas fa-file-download"></i> TXT
                 </button>
                 
@@ -49,7 +70,29 @@
             </div>
         </div>
 
-        <section class="search-section">
+        <section class="learning-hub dashboard-panel" id="learningHub" aria-labelledby="learningTitle">
+            <div class="panel-heading">
+                <div>
+                    <p class="section-kicker">Acceso rápido</p>
+                    <h2 id="learningTitle">¿Qué necesitás consultar?</h2>
+                </div>
+                <span class="panel-icon"><i class="fas fa-bolt"></i></span>
+            </div>
+            <div class="dashboard-actions" aria-label="Acciones rápidas">
+                <button type="button" data-sector="Hematología"><span><i class="fas fa-droplet"></i></span><strong>Hematología</strong><small>Hemograma y más</small></button>
+                <button type="button" data-sector="Hemostasia"><span><i class="fas fa-vial"></i></span><strong>Hemostasia</strong><small>Coagulación</small></button>
+                <button type="button" data-sector="Química clínica"><span><i class="fas fa-flask"></i></span><strong>Química clínica</strong><small>Suero y plasma</small></button>
+                <button type="button" data-sector="Microbiología"><span><i class="fas fa-bacterium"></i></span><strong>Microbiología</strong><small>Cultivos y muestras</small></button>
+            </div>
+            <div class="dashboard-guide">
+                <div class="guide-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div><strong>Modo estudiante</strong><p>Buscá un análisis y abrí su ficha para ver preparación, muestra, tubo y procesamiento.</p></div>
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <p class="clinical-note"><i class="fas fa-circle-info"></i> Material de apoyo para formación. Validá siempre el procedimiento vigente con la dirección técnica y el protocolo de tu institución.</p>
+        </section>
+
+        <section class="search-section" aria-label="Buscar estudios">
             <div class="input-group">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Buscar determinación o análisis...">
@@ -72,7 +115,8 @@
             </div>
         </section>
 
-        <ul id="examList"></ul>
+        <p id="resultsSummary" class="results-summary" aria-live="polite"></p>
+        <ul id="examList" aria-label="Resultados de estudios"></ul>
 
         <div id="modal" class="modal">
             <div class="modal-content">
@@ -90,8 +134,8 @@
             <a href="https://wa.me/+5493765127562" 
                target="_blank" 
                rel="noopener noreferrer" 
-               style="text-decoration: none; background: #25d366; color: white; padding: 12px 24px; border-radius: 25px; font-size: 0.85em; display: inline-block; margin-top: 18px; font-weight: bold; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.25); transition: all 0.2s;">
-                <i class="fab fa-whatsapp"></i> Consultas Profesionales
+               class="footer-contact">
+                <i class="fab fa-whatsapp"></i> Consultas profesionales
             </a>
         </footer>
     </div>
