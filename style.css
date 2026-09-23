@@ -4,23 +4,23 @@
    ========================================================== */
 
 :root {
-    --primary: #087ea4;
-    --primary-dark: #07566f;
-    --primary-soft: #e8f6fa;
-    --accent: #16a394;
-    --accent-soft: #e7f8f5;
-    --dark: #132b3a;
-    --text: #334e5e;
-    --muted: #6d8491;
-    --light-bg: #f3f7f9;
+    --primary: #16833f;
+    --primary-dark: #07512f;
+    --primary-soft: #edf8e8;
+    --accent: #b6df18;
+    --accent-soft: #f2f9dc;
+    --dark: #092d20;
+    --text: #365247;
+    --muted: #71877c;
+    --light-bg: #f4f7f0;
     --white: #ffffff;
-    --border: #dce8ed;
-    --border-strong: #c8dce3;
+    --border: #dce7dd;
+    --border-strong: #c6d8ca;
     --whatsapp: #25d366;
     --danger: #e05252;
-    --shadow-sm: 0 3px 12px rgba(21, 56, 72, .06);
-    --shadow-md: 0 12px 30px rgba(21, 56, 72, .10);
-    --shadow-lg: 0 24px 60px rgba(21, 56, 72, .16);
+    --shadow-sm: 0 3px 12px rgba(7, 57, 32, .07);
+    --shadow-md: 0 12px 30px rgba(7, 57, 32, .11);
+    --shadow-lg: 0 24px 60px rgba(7, 57, 32, .18);
     --radius: 18px;
 }
 
@@ -769,4 +769,136 @@ button:focus-visible, a:focus-visible, li:focus-visible {
     .dashboard-welcome { gap:8px; }
     .header-symbol { display:none; }
     .dashboard-actions { gap:6px; }
+}
+
+
+/* ==========================================================
+   GUÍALAB · Identidad visual del logo + modo estudiante v5
+   Paleta basada en verde laboratorio, verde lima y rojo sangre.
+   ========================================================== */
+body {
+    background:
+        radial-gradient(circle at 8% 0%, rgba(22,131,63,.12), transparent 25rem),
+        radial-gradient(circle at 96% 18%, rgba(182,223,24,.10), transparent 23rem),
+        #f4f7f0;
+}
+
+.dashboard-header {
+    background:
+        radial-gradient(circle at 50% 8%, rgba(182,223,24,.10), transparent 15rem),
+        linear-gradient(145deg, #ffffff 0%, #f7fbf4 65%, #eff7e9 100%);
+    border-color: #dbe8d9;
+}
+
+.dashboard-header::before {
+    background: linear-gradient(90deg, #064d2f 0%, #16833f 48%, #b6df18 82%, #d51f2f 100%);
+}
+
+.brand-full-logo {
+    width: 100%;
+    justify-content: center;
+    padding: 2px 0 0;
+}
+
+.dashboard-header .brand-logo {
+    width: 210px;
+    height: auto;
+    max-width: 72vw;
+    object-fit: contain;
+    flex: 0 0 auto;
+    display: block;
+    filter: drop-shadow(0 7px 10px rgba(5,65,34,.13));
+}
+
+.online-pill {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: #edf8e8 !important;
+    color: #166b36 !important;
+    border-color: #cce5c8 !important;
+}
+
+.online-pill i { color: #2eaf51 !important; }
+
+.dashboard-welcome { margin-top: 17px; }
+.dashboard-welcome h1 span { color: #16833f; }
+.dashboard-welcome .eyebrow { color: #568063; }
+.header-symbol {
+    color: #16833f !important;
+    background: linear-gradient(145deg,#eff8e8,#ffffff) !important;
+    border-color: #d6e9cf !important;
+}
+
+.dashboard-stats > div { border-color: #dce8d8; background: rgba(255,255,255,.86); }
+.dashboard-stats i { color: #16833f; }
+.dashboard-stats > div:nth-child(2) i { color: #6cae27; }
+.dashboard-stats > div:nth-child(3) i { color: #d43a3a; }
+
+.dashboard-panel {
+    border-color: #dbe8d9;
+    background: linear-gradient(145deg,#ffffff,#f8fbf6);
+}
+.dashboard-actions button > span {
+    background: #edf8e8;
+    color: #16833f;
+}
+.dashboard-actions button:hover,
+.dashboard-actions button:focus-visible { border-color:#a8cc9f; }
+.dashboard-guide {
+    width: 100%;
+    border: 1px solid #d7e8cf;
+    background: linear-gradient(90deg,#f1f9eb,#fbfcf8);
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+.dashboard-guide:hover { border-color:#a8cc9f; box-shadow:0 8px 18px rgba(22,131,63,.09); transform:translateY(-1px); }
+.dashboard-guide:focus-visible { outline:3px solid rgba(22,131,63,.20); outline-offset:2px; }
+.guide-copy { flex:1; min-width:0; }
+.guide-copy > span { display:block; margin-top:3px; color:var(--muted); font-size:.59rem; line-height:1.35; }
+.guide-toggle { color:#6c927a; font-size:1.15rem; }
+.student-mode-panel {
+    margin-top: 9px;
+    padding: 13px;
+    border-radius: 14px;
+    background: #f4faef;
+    border: 1px solid #d6e8cd;
+    animation: fadeIn .2s ease both;
+}
+.student-mode-panel[hidden] { display:none; }
+.student-mode-title { display:flex; align-items:center; gap:7px; color:#0d6334; font-size:.72rem; margin-bottom:10px; }
+.student-mode-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:7px; }
+.student-mode-grid div { display:flex; align-items:center; gap:7px; padding:8px; background:#fff; border:1px solid #e0ebdc; border-radius:10px; }
+.student-mode-grid b { display:grid; place-items:center; width:21px; height:21px; flex:0 0 21px; border-radius:50%; background:#dff0d7; color:#146536; font-size:.65rem; }
+.student-mode-grid span { color:#456052; font-size:.61rem; line-height:1.2; font-weight:650; }
+.student-start { margin-top:9px; width:100%; border:0; border-radius:10px; padding:9px; background:linear-gradient(135deg,#16833f,#07512f); color:#fff; font-size:.69rem; font-weight:800; cursor:pointer; }
+.student-start:hover { filter:brightness(1.05); }
+
+/* Green/lime identity for the main controls */
+.input-group, .select-group { border-color:#d5e4d7; background:#fff; }
+.input-group:focus-within { border-color:#76b77e; box-shadow:0 0 0 4px rgba(22,131,63,.10), var(--shadow-sm); }
+.input-group > i { color:#16833f; }
+select:focus { border-color:#76b77e; box-shadow:0 0 0 4px rgba(22,131,63,.10),var(--shadow-sm); }
+.results-summary { color:#678072; }
+#examList li:hover { border-color:#b5d0b4; }
+.wrapper-izquierdo small i { color:#16833f; }
+#examList li > i { color:#a7b9ad !important; }
+#examList li:hover > i { color:#16833f !important; }
+
+.modal-sector { color:#146536; background:#edf8e8; border-color:#d3e8cd; }
+.seccion-modal-paciente { background:#f1f9ed; border-color:#d5e9cd; }
+.seccion-modal-tecnico { background:#f7faf6; border-color:#dce7dd; }
+.modal-subtitulo.paciente { color:#277442; }
+.modal-subtitulo.tecnico { color:#0f6a38; }
+.tab-btn.active.tab-paciente, .tab-btn.active.tab-tecnico { color:#176b39; }
+.btn-whatsapp-premium { background:linear-gradient(135deg,#16833f,#07512f); box-shadow:0 8px 18px rgba(22,131,63,.20); }
+
+@media (max-width:600px) {
+    .dashboard-header .brand-logo { width:190px; max-width:76vw; }
+    .online-pill { top:13px; right:13px; }
+}
+@media (max-width:400px) {
+    .dashboard-header .brand-logo { width:175px; max-width:74vw; }
+    .student-mode-grid { gap:5px; }
 }

@@ -29,12 +29,8 @@
     <div class="app-container">
         <header class="dashboard-header">
             <div class="dashboard-topline">
-                <div class="brand-mini">
-                    <img class="brand-logo" src="logo-guialab.png" alt="GuíaLab">
-                    <div class="brand-copy">
-                        <span class="brand-name">GuíaLab</span>
-                        <span class="brand-subtitle">Pre-Analítica</span>
-                    </div>
+                <div class="brand-mini brand-full-logo">
+                    <img class="brand-logo" src="logo-guialab.png" alt="GuíaLab · Formación y capacitación continua">
                 </div>
                 <span class="online-pill"><i class="fas fa-circle"></i> Activo</span>
             </div>
@@ -84,10 +80,20 @@
                 <button type="button" data-sector="Química clínica"><span><i class="fas fa-flask"></i></span><strong>Química clínica</strong><small>Suero y plasma</small></button>
                 <button type="button" data-sector="Microbiología"><span><i class="fas fa-bacterium"></i></span><strong>Microbiología</strong><small>Cultivos y muestras</small></button>
             </div>
-            <div class="dashboard-guide">
-                <div class="guide-icon"><i class="fas fa-graduation-cap"></i></div>
-                <div><strong>Modo estudiante</strong><p>Buscá un análisis y abrí su ficha para ver preparación, muestra, tubo y procesamiento.</p></div>
-                <i class="fas fa-arrow-right"></i>
+            <button type="button" class="dashboard-guide" id="studentModeButton" aria-pressed="false">
+                <span class="guide-icon"><i class="fas fa-graduation-cap"></i></span>
+                <span class="guide-copy"><strong>Modo estudiante</strong><span>Activá una vista pensada para estudiar: preparación, muestra, tubo y procesamiento.</span></span>
+                <span class="guide-toggle"><i class="fas fa-toggle-off"></i></span>
+            </button>
+            <div id="studentModePanel" class="student-mode-panel" hidden>
+                <div class="student-mode-title"><i class="fas fa-book-medical"></i><strong>Modo estudiante activado</strong></div>
+                <div class="student-mode-grid">
+                    <div><b>1</b><span>Buscá una determinación</span></div>
+                    <div><b>2</b><span>Revisá preparación y ayuno</span></div>
+                    <div><b>3</b><span>Identificá muestra y tubo</span></div>
+                    <div><b>4</b><span>Estudiá el procesamiento</span></div>
+                </div>
+                <button type="button" id="studentStartButton" class="student-start"><i class="fas fa-search"></i> Ir al buscador</button>
             </div>
             <p class="clinical-note"><i class="fas fa-circle-info"></i> Material de apoyo para formación. Validá siempre el procedimiento vigente con la dirección técnica y el protocolo de tu institución.</p>
         </section>

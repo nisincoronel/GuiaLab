@@ -1178,6 +1178,47 @@ document
     });
 
 
+
+// ============================================================
+// MODO ESTUDIANTE
+// ============================================================
+
+const studentModeButton = document.getElementById("studentModeButton");
+const studentModePanel = document.getElementById("studentModePanel");
+const studentStartButton = document.getElementById("studentStartButton");
+
+function activarModoEstudiante() {
+    const activo = document.body.classList.toggle("student-mode-active");
+
+    if (studentModeButton) {
+        studentModeButton.setAttribute("aria-pressed", String(activo));
+        const icon = studentModeButton.querySelector(".guide-toggle i");
+        if (icon) icon.className = activo ? "fas fa-toggle-on" : "fas fa-toggle-off";
+    }
+
+    if (studentModePanel) studentModePanel.hidden = !activo;
+
+    const input = document.getElementById("searchInput");
+    if (activo && input) {
+        setTimeout(() => input.focus(), 120);
+    }
+}
+
+if (studentModeButton) {
+    studentModeButton.addEventListener("click", activarModoEstudiante);
+}
+
+if (studentStartButton) {
+    studentStartButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const search = document.getElementById("searchInput");
+        if (search) {
+            search.scrollIntoView({ behavior: "smooth", block: "center" });
+            setTimeout(() => search.focus(), 350);
+        }
+    });
+}
+
 // ============================================================
 // CARGA DE LA BASE EXTERNA
 // ============================================================
