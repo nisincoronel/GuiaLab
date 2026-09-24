@@ -23,6 +23,7 @@ function normalizarDeterminacion(d) {
         prepPaciente: d["Condiciones especiales"] ?? "",
         obs: d["Observaciones"] ?? "",
         sinonimos: d["Sinónimos"] ?? "",
+        nbu: d["NBU"] ?? d["Código NBU"] ?? "",
 
         // Compatibilidad con la lógica técnica existente.
         centrifugar: d["Centrifugar"] ?? "",
@@ -223,7 +224,9 @@ function render() {
 
                 d.integrantes,
 
-                d.sinonimos
+                d.sinonimos,
+
+                d.nbu
 
             ]
                 .filter(Boolean)
@@ -382,6 +385,7 @@ function render() {
                         ></i>
 
                         ${d.area}
+                        ${d.nbu ? `<span class="nbu-mini">NBU ${escaparHTML(d.nbu)}</span>` : ""}
 
                     </small>
 
@@ -433,6 +437,11 @@ function crearDesafioEstudiante(d) {
             icono: "fa-gears",
             pregunta: "¿Cómo debe procesarse o conservarse?",
             respuesta: d.procesamiento || "La base no especifica el procesamiento."
+        },
+        {
+            icono: "fa-hashtag",
+            pregunta: "¿Cuál es el código NBU de esta práctica?",
+            respuesta: d.nbu || "Esta determinación todavía no tiene un código NBU cargado en GuíaLab."
         }
     ];
 
@@ -504,6 +513,121 @@ function mostrarFichaCompletaEstudiante() {
     if (!wrap) return;
     wrap.style.display = "block";
     wrap.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// ============================================================
+// MODO ESTUDIANTE · ENTRENAMIENTO
+// ============================================================
+let quizEstado = { preguntas: [], indice: 0, aciertos: 0, respondidas: false };
+
+function valoresParaCampo(campo, excluir) {
+    const vals = [...new Set(determinacionesUnicas
+        .map(d => d[campo])
+        .filter(v => v && String(v).trim() && v !== excluir)
+        .map(v => String(v).trim()))];
+    return vals.sort(() => Math.random() - 0.5);
+}
+
+function crearPreguntaQuiz(d) {
+    const campos = [
+        { campo: 'muestra', pregunta: '¿Qué muestra corresponde?', icono: 'fa-vial' },
+        { campo: 'tubo', pregunta: '¿Qué tubo corresponde?', icono: 'fa-droplet' },
+        { campo: 'ayuno', pregunta: '¿Qué preparación/ayuno requiere?', icono: 'fa-utensils' },
+        { campo: 'procesamiento', pregunta: '¿Qué indicación de procesamiento o conservación corresponde?', icono: 'fa-gears' },
+        { campo: 'nbu', pregunta: '¿Cuál es el código NBU de esta práctica?', icono: 'fa-hashtag' }
+    ];
+    const q = campos[Math.floor(Math.random() * campos.length)];
+    const correcta = String(d[q.campo] || '').trim();
+    if (!correcta) return crearPreguntaQuiz({ ...d, [q.campo]: 'Dato no cargado' });
+    let distractores = valoresParaCampo(q.campo, correcta).slice(0, 3);
+    while (distractores.length < 3) distractores.push('Dato no correspondiente');
+    const opciones = [...distractores, correcta].sort(() => Math.random() - 0.5);
+    return { d, ...q, correcta, opciones };
+}
+
+function iniciarEntrenamiento() {
+    if (!determinacionesUnicas.length) return;
+    const banco = [...determinacionesUnicas].sort(() => Math.random() - 0.5);
+    const base = banco.slice(0, Math.min(5, banco.length));
+    quizEstado = {
+        preguntas: base.map(crearPreguntaQuiz),
+        indice: 0,
+        aciertos: 0,
+        respondidas: false
+    };
+    renderPreguntaQuiz();
+    const panel = document.getElementById('studentQuizPanel');
+    if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function renderPreguntaQuiz() {
+    const panel = document.getElementById('studentQuizPanel');
+    if (!panel) return;
+    const q = quizEstado.preguntas[quizEstado.indice];
+    if (!q) return;
+    const total = quizEstado.preguntas.length;
+    panel.hidden = false;
+    panel.innerHTML = `
+        <div class="quiz-top">
+            <div><span class="student-overline">Entrenamiento</span><h3><i class="fas fa-dumbbell"></i> Práctica ${quizEstado.indice + 1} de ${total}</h3></div>
+            <div class="quiz-score"><strong>${quizEstado.aciertos}</strong><small>aciertos</small></div>
+        </div>
+        <div class="quiz-progress"><span style="width:${((quizEstado.indice) / total) * 100}%"></span></div>
+        <div class="quiz-exam-name"><i class="fas fa-flask"></i><strong>${escaparHTML(q.d.nombre)}</strong>${q.d.nbu ? `<span>NBU ${escaparHTML(q.d.nbu)}</span>` : ''}</div>
+        <div class="quiz-question"><span class="quiz-icon"><i class="fas ${q.icono}"></i></span><div><small>Pregunta</small><strong>${escaparHTML(q.pregunta)}</strong></div></div>
+        <div class="quiz-options">
+            ${q.opciones.map((op,i)=>`<button type="button" onclick="responderQuiz(${i})"><span>${String.fromCharCode(65+i)}</span>${escaparHTML(op)}</button>`).join('')}
+        </div>
+        <div id="quizFeedback" class="quiz-feedback" hidden></div>
+    `;
+}
+
+function responderQuiz(indice) {
+    if (quizEstado.respondidas) return;
+    const q = quizEstado.preguntas[quizEstado.indice];
+    const buttons = document.querySelectorAll('.quiz-options button');
+    const elegida = q.opciones[indice];
+    const correcto = elegida === q.correcta;
+    quizEstado.respondidas = true;
+    if (correcto) quizEstado.aciertos++;
+    buttons.forEach((b,i)=>{
+        b.disabled = true;
+        if (q.opciones[i] === q.correcta) b.classList.add('correct');
+        if (i === indice && !correcto) b.classList.add('wrong');
+    });
+    const feedback = document.getElementById('quizFeedback');
+    if (feedback) {
+        feedback.hidden = false;
+        feedback.className = `quiz-feedback ${correcto ? 'is-correct' : 'is-wrong'}`;
+        feedback.innerHTML = `<strong>${correcto ? '¡Correcto!' : 'No exactamente.'}</strong><span>Respuesta: ${escaparHTML(q.correcta)}</span><button type="button" onclick="siguientePreguntaQuiz()">${quizEstado.indice + 1 === quizEstado.preguntas.length ? 'Ver resultado' : 'Siguiente'} <i class="fas fa-arrow-right"></i></button>`;
+    }
+}
+
+function siguientePreguntaQuiz() {
+    if (quizEstado.indice + 1 >= quizEstado.preguntas.length) {
+        mostrarResultadoQuiz();
+        return;
+    }
+    quizEstado.indice++;
+    quizEstado.respondidas = false;
+    renderPreguntaQuiz();
+}
+
+function mostrarResultadoQuiz() {
+    const panel = document.getElementById('studentQuizPanel');
+    if (!panel) return;
+    const total = quizEstado.preguntas.length;
+    const porcentaje = Math.round((quizEstado.aciertos / total) * 100);
+    panel.hidden = false;
+    panel.innerHTML = `
+        <div class="quiz-result">
+            <div class="quiz-result-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span class="student-overline">Entrenamiento terminado</span>
+            <h3>${quizEstado.aciertos} de ${total} correctas</h3>
+            <p>Resultado de esta ronda: <strong>${porcentaje}%</strong>.</p>
+            <button type="button" class="student-start" onclick="iniciarEntrenamiento()"><i class="fas fa-rotate-right"></i> Nueva ronda</button>
+        </div>
+    `;
 }
 
 // ============================================================
@@ -616,6 +740,7 @@ function mostrarDetalle(d) {
                     ${d.area}
                 </span>
 
+                ${d.nbu ? `<span class="nbu-chip"><i class="fas fa-hashtag"></i> NBU ${escaparHTML(d.nbu)}</span>` : ""}
 
                 <span
                     style="

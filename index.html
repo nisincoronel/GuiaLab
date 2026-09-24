@@ -11,7 +11,7 @@
   gtag('config', 'G-0PN3C9FFQS');
 </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>GuíaLab | Formación y Pre-Analítica</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
@@ -22,12 +22,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#07512f">
 </head>
 <body>
 
     <div class="app-container">
-        <header class="dashboard-header">
+        <header class="dashboard-header" id="inicio">
             <div class="dashboard-topline">
                 <div class="brand-mini brand-full-logo">
                     <img class="brand-logo" src="logo-guialab.png" alt="GuíaLab · Formación y capacitación continua">
@@ -36,7 +37,7 @@
             </div>
             <div class="dashboard-welcome">
                 <div>
-                    <p class="eyebrow">Panel</p>
+                    <p class="eyebrow">Panel profesional</p>
                     <h1>Tu guía de laboratorio, <span>en un solo lugar.</span></h1>
                     <p>Consultá determinaciones, muestras, tubos y condiciones pre-analíticas rápidamente.</p>
                 </div>
@@ -93,12 +94,15 @@
                     <div><b>3</b><span>Identificá muestra y tubo</span></div>
                     <div><b>4</b><span>Estudiá el procesamiento</span></div>
                 </div>
-                <button type="button" id="studentStartButton" class="student-start"><i class="fas fa-search"></i> Ir al buscador</button>
+                <div class="student-panel-actions">
+                    <button type="button" id="studentStartButton" class="student-start"><i class="fas fa-search"></i> Ir al buscador</button>
+                    <button type="button" id="studentTrainingButton" class="student-start student-training"><i class="fas fa-dumbbell"></i> Entrenamiento</button>
+                </div>
             </div>
             <p class="clinical-note"><i class="fas fa-circle-info"></i> Material de apoyo para formación. Validá siempre el procedimiento vigente con la dirección técnica y el protocolo de tu institución.</p>
         </section>
 
-        <section class="search-section" aria-label="Buscar estudios">
+        <section class="search-section" id="buscar" aria-label="Buscar estudios">
             <div class="input-group">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchInput" placeholder="Buscar determinación o análisis...">
@@ -122,6 +126,7 @@
         </section>
 
         <p id="resultsSummary" class="results-summary" aria-live="polite"></p>
+        <section id="studentQuizPanel" class="student-quiz-panel" hidden aria-live="polite"></section>
         <ul id="examList" aria-label="Resultados de estudios"></ul>
 
         <div id="modal" class="modal">
@@ -146,7 +151,39 @@
         </footer>
     </div>
 
+    <nav class="mobile-bottom-nav" aria-label="Navegación rápida">
+        <a href="#inicio" class="mobile-nav-item active" data-nav="inicio"><i class="fas fa-house"></i><span>Inicio</span></a>
+        <a href="#buscar" class="mobile-nav-item" data-nav="buscar"><i class="fas fa-magnifying-glass"></i><span>Buscar</span></a>
+        <a href="#learningHub" class="mobile-nav-item" data-nav="estudiar"><i class="fas fa-graduation-cap"></i><span>Estudiar</span></a>
+        <a href="#pedido-status" class="mobile-nav-item" data-nav="pedido"><i class="fas fa-clipboard-list"></i><span>Pedido</span></a>
+    </nav>
+
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('studentTrainingButton');
+            if (btn) btn.addEventListener('click', iniciarEntrenamiento);
+        });
+    </script>
+
+    <script>
+        // Navegación móvil: mantiene una experiencia tipo app sin alterar la lógica existente.
+        document.querySelectorAll('.mobile-nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.mobile-nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                if (item.dataset.nav === 'buscar') {
+                    setTimeout(() => document.getElementById('searchInput')?.focus({ preventScroll: true }), 180);
+                }
+                if (item.dataset.nav === 'pedido') {
+                    const pedido = document.getElementById('pedido-status');
+                    if (pedido && getComputedStyle(pedido).display === 'none') {
+                        document.getElementById('examList')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
 
     <script>
         if ('serviceWorker' in navigator) {

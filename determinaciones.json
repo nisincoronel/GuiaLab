@@ -15,7 +15,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "Concurrir con ayuno de 8 hs.",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660297"
   },
   {
     "ID": 2,
@@ -33,7 +34,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "No requiere ayuno",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660475"
   },
   {
     "ID": 3,
@@ -51,7 +53,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "No requiere ayuno",
     "Observaciones": "Enviar en recipiente seco (sin hielo).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 4,
@@ -69,7 +72,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "Concurrir con ayuno de 8 hs.",
     "Observaciones": "Procesar en el momento o antes de la hora de extracción.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660818"
   },
   {
     "ID": 5,
@@ -87,7 +91,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Conservar a Temp. Ambiente. Refrigerar si se demora.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660771"
   },
   {
     "ID": 6,
@@ -105,7 +110,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Método manual. Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temp. Ambiente (Refrigerar si se demora).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660771"
   },
   {
     "ID": 7,
@@ -123,7 +129,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente. Centrifugar y separar en tubo de plástico. Refrigerar si demora.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660887"
   },
   {
     "ID": 8,
@@ -141,7 +148,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Método manual. Temperatura ambiente. Centrifugar y separar en tubo de plástico.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660887"
   },
   {
     "ID": 9,
@@ -159,11 +167,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "664418"
   },
   {
     "ID": 10,
-    "Determinación": "Fibrinógeno",
+    "Determinación": "Fibrinógeno (FIB)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado (Citrato de sodio 3,2%)",
@@ -177,11 +186,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente. Centrifugar y separar en tubo de plástico.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660345"
   },
   {
     "ID": 11,
-    "Determinación": "Anticoagulante Lúpico",
+    "Determinación": "Anticoagulante Lúpico (Screning y Confirmatorio - Código 2709)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado MUY pobre en plaquetas",
@@ -195,11 +205,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Doble centrifugado estricto para eliminar plaquetas. Separar en tubo de plástico. Temp. ambiente o congelar si se deriva.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "662709"
   },
   {
     "ID": 12,
-    "Determinación": "Dosaje de von Willebrand: Funcional / Inmunológico",
+    "Determinación": "Dosaje de von Willebrand: Funcional / Inmunológico (FVWF / 5119)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado (Citrato de sodio 3,2%)",
@@ -213,7 +224,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temperatura ambiente para procesamiento inmediato.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "665116 / 665119"
   },
   {
     "ID": 13,
@@ -231,7 +243,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Especificar factor solicitado. Centrifugar y separar en tubo plástico. Volver a centrifugar. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 14,
@@ -249,7 +262,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668614"
   },
   {
     "ID": 15,
@@ -267,7 +281,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668631 / 668648"
   },
   {
     "ID": 16,
@@ -285,7 +300,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 17,
@@ -303,7 +319,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar del paquete celular en tubo plástico. Volver a centrifugar. Freezar rápidamente a -20°C hasta su procesamiento/derivación.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668823"
   },
   {
     "ID": 18,
@@ -321,11 +338,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar dos veces para eliminar plaquetas.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "662709"
   },
   {
     "ID": 19,
-    "Determinación": "Glucemia",
+    "Determinación": "Glucemia (GLU)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -339,11 +357,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "En toma domiciliaria utilizar tubo de EDTA Fluoruro",
-    "Sinónimos": "glucosa"
+    "Sinónimos": "",
+    "NBU": "660412"
   },
   {
     "ID": 20,
-    "Determinación": "Uremia",
+    "Determinación": "Uremia / Urea (URE)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero o Plasma",
@@ -357,11 +376,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660902"
   },
   {
     "ID": 21,
-    "Determinación": "Creatinina Sérica",
+    "Determinación": "Creatinina Sérica (CRE)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -375,11 +395,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660192"
   },
   {
     "ID": 22,
-    "Determinación": "Ionograma Sérico",
+    "Determinación": "Ionograma Sérico (ION)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -393,11 +414,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "Iono"
+    "Sinónimos": "",
+    "NBU": "660546"
   },
   {
     "ID": 23,
-    "Determinación": "Hemoglobina Glicosilada",
+    "Determinación": "Hemoglobina Glicosilada (HBGLIC)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Sangre entera",
@@ -411,11 +433,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "Hb1Ac, Hb Glicosilada"
+    "Sinónimos": "",
+    "NBU": "661070"
   },
   {
     "ID": 24,
-    "Determinación": "Ácido Úrico",
+    "Determinación": "Ácido Úrico (URI)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero o Plasma",
@@ -429,11 +452,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente. De lo contrario, refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660904"
   },
   {
     "ID": 25,
-    "Determinación": "Ácido Úrico Urinario",
+    "Determinación": "Ácido Úrico Urinario (URIU)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -447,11 +471,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Mantener el frasco en lugar fresco durante la recolección. Conservar a Temp. ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660905"
   },
   {
     "ID": 26,
-    "Determinación": "Albúmina Sérica",
+    "Determinación": "Albúmina Sérica (ALB)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -465,11 +490,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660015"
   },
   {
     "ID": 27,
-    "Determinación": "Amilasa Sérica",
+    "Determinación": "Amilasa Sérica (AMI)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -483,11 +509,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660022"
   },
   {
     "ID": 28,
-    "Determinación": "Bilirrubina Total y Directa",
+    "Determinación": "Bilirrubina Total y Directa (111)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero o Plasma",
@@ -501,11 +528,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "PROTEGER DE LA LUZ. Temperatura ambiente o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660110"
   },
   {
     "ID": 29,
-    "Determinación": "Calcemia",
+    "Determinación": "Calcemia / Calcio Sérico (CA)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -519,11 +547,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar.",
-    "Sinónimos": "Calcio sérico"
+    "Sinónimos": "",
+    "NBU": "660133"
   },
   {
     "ID": 30,
-    "Determinación": "Calcio Urinario",
+    "Determinación": "Calcio Urinario / Calciuria 24 hs (CAU)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -537,11 +566,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "Calciuria 24 hs"
+    "Sinónimos": "",
+    "NBU": "660136"
   },
   {
     "ID": 31,
-    "Determinación": "Clearence de Creatinina",
+    "Determinación": "Clearence de Creatinina (CL CREL)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero y Orina de 24 hs",
@@ -555,11 +585,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Requiere el peso y la talla exacta del paciente, además del volumen total de la orina.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660193"
   },
   {
     "ID": 32,
-    "Determinación": "Complemento C3",
+    "Determinación": "Complemento C3 (C3 AUT)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -573,11 +604,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "C3 AUT"
+    "Sinónimos": "",
+    "NBU": "660120"
   },
   {
     "ID": 33,
-    "Determinación": "Complemento C4",
+    "Determinación": "Complemento C4 (C4 AUT)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -591,11 +623,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "C4 AUT"
+    "Sinónimos": "",
+    "NBU": "660121"
   },
   {
     "ID": 34,
-    "Determinación": "Creatinina Urinaria",
+    "Determinación": "Creatinina Urinaria (CRE U)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -609,11 +642,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660191"
   },
   {
     "ID": 35,
-    "Determinación": "Creatinquinasa Total",
+    "Determinación": "Creatinquinasa Total / CK (CPK)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -627,11 +661,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente. Evitar inyecciones intramusculares previas.",
-    "Sinónimos": "CK, CPK"
+    "Sinónimos": "",
+    "NBU": "660190"
   },
   {
     "ID": 36,
-    "Determinación": "Fosfatasa Alcalina",
+    "Determinación": "Fosfatasa Alcalina (FAL)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -645,11 +680,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "Fal"
+    "Sinónimos": "",
+    "NBU": "660357"
   },
   {
     "ID": 37,
-    "Determinación": "Fósforo Sérico",
+    "Determinación": "Fósforo Sérico (P)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -663,11 +699,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660362"
   },
   {
     "ID": 38,
-    "Determinación": "Fósforo Urinario",
+    "Determinación": "Fósforo Urinario (PUR)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -681,11 +718,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660363"
   },
   {
     "ID": 39,
-    "Determinación": "Gamma Glutamil Transpeptidasa",
+    "Determinación": "Gamma Glutamil Transpeptidasa (GGT)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -699,11 +737,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "GGT"
+    "Sinónimos": "",
+    "NBU": "660420"
   },
   {
     "ID": 40,
-    "Determinación": "Glucosa en Orina",
+    "Determinación": "Glucosa en Orina / Glucosuria 24 hs (GLUR)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -717,11 +756,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "Glucosuria 24 hs"
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 41,
-    "Determinación": "Hierro Sérico",
+    "Determinación": "Hierro Sérico / Sideremia (FE)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -735,11 +775,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "Sideremia, FE"
+    "Sinónimos": "",
+    "NBU": "660343"
   },
   {
     "ID": 42,
-    "Determinación": "Índice Albuminuria/Creatinuria",
+    "Determinación": "Índice Albuminuria/Creatinuria (IAB2)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Primer Orina de la Mañana",
@@ -753,11 +794,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "RAC"
+    "Sinónimos": "",
+    "NBU": "666713"
   },
   {
     "ID": 43,
-    "Determinación": "Índice Proteinuria/Creatininuria",
+    "Determinación": "Índice Proteinuria/Creatininuria (IPC2)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Primer Orina de la Mañana",
@@ -771,11 +813,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "666714"
   },
   {
     "ID": 44,
-    "Determinación": "Inmunoglobulina A",
+    "Determinación": "Inmunoglobulina A (IGA)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -789,11 +832,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "IgA"
+    "Sinónimos": "",
+    "NBU": "660537"
   },
   {
     "ID": 45,
-    "Determinación": "Inmunoglobulina G",
+    "Determinación": "Inmunoglobulina G (IGG)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -807,11 +851,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "IgG"
+    "Sinónimos": "",
+    "NBU": "660540"
   },
   {
     "ID": 46,
-    "Determinación": "Inmunoglobulina M",
+    "Determinación": "Inmunoglobulina M (IGM)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -825,11 +870,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "IgM"
+    "Sinónimos": "",
+    "NBU": "660541"
   },
   {
     "ID": 47,
-    "Determinación": "Ionograma Urinario",
+    "Determinación": "Ionograma Urinario (ION U)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -843,11 +889,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "Ion U"
+    "Sinónimos": "",
+    "NBU": "660547"
   },
   {
     "ID": 48,
-    "Determinación": "Lactato Deshidrogenasa",
+    "Determinación": "Lactato Deshidrogenasa (LDH)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -861,11 +908,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente. No refrigerar (se inactiva a bajas temperaturas).",
-    "Sinónimos": "LDH"
+    "Sinónimos": "",
+    "NBU": "660594"
   },
   {
     "ID": 49,
-    "Determinación": "Magnesio Sérico",
+    "Determinación": "Magnesio Sérico (MG)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -879,11 +927,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "MG"
+    "Sinónimos": "",
+    "NBU": "660653"
   },
   {
     "ID": 50,
-    "Determinación": "Magnesio Urinario 24 hs",
+    "Determinación": "Magnesio Urinario 24 hs (MGUR)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -897,11 +946,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660654"
   },
   {
     "ID": 51,
-    "Determinación": "Microalbuminuria",
+    "Determinación": "Microalbuminuria (MICAL)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -915,11 +965,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661130"
   },
   {
     "ID": 52,
-    "Determinación": "Proteína C Reactiva",
+    "Determinación": "Proteína C Reactiva (PCRRE)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -933,11 +984,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660761"
   },
   {
     "ID": 53,
-    "Determinación": "Proteínas Totales Séricas",
+    "Determinación": "Proteínas Totales Séricas (PT)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -951,11 +1003,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660763"
   },
   {
     "ID": 54,
-    "Determinación": "Test de Tolerancia Oral a la Glucosa",
+    "Determinación": "Test de Tolerancia Oral a la Glucosa (P75)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero o Plasma",
@@ -969,11 +1022,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "RECOMENDACIÓN ASAD:\n• 3 días antes: Ingerir carbohidratos comunes. Evitar estrés, infecciones o fiebre.\n• Concurrir con 8 hs de ayuno exactas y 75g de glucosa de farmacia.\n• Se mide glucemia basal (debe ser <125 mg/dL). Se ingieren 75g de glucosa diluidos en 375ml de agua en 5 min.\n• Reposo sentado estricto por 2 hs para la segunda extracción. Náuseas o vómitos suspenden la prueba.",
-    "Sinónimos": "P75"
+    "Sinónimos": "",
+    "NBU": "Módulo / consultar NBU"
   },
   {
     "ID": 55,
-    "Determinación": "Proteinuria de 24 hs",
+    "Determinación": "Proteinuria de 24 hs (PT U)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -987,11 +1041,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660767"
   },
   {
     "ID": 56,
-    "Determinación": "Transaminasa",
+    "Determinación": "Transaminasa GOT / AST",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1005,11 +1060,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "GOT, AST"
+    "Sinónimos": "",
+    "NBU": "660873"
   },
   {
     "ID": 57,
-    "Determinación": "Transaminasa",
+    "Determinación": "Transaminasa GPT / ALT",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1023,11 +1079,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "GPT, ALT"
+    "Sinónimos": "",
+    "NBU": "660874"
   },
   {
     "ID": 58,
-    "Determinación": "Transferrina",
+    "Determinación": "Transferrina (TRAN)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1041,11 +1098,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660875"
   },
   {
     "ID": 59,
-    "Determinación": "Urea Urinaria",
+    "Determinación": "Urea Urinaria (UREU)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Orina de 24 hs",
@@ -1059,11 +1117,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660900"
   },
   {
     "ID": 60,
-    "Determinación": "Capacidad Total de Fijación de Hierro",
+    "Determinación": "Capacidad Total de Fijación de Hierro (IBCT)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1077,11 +1136,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660837"
   },
   {
     "ID": 61,
-    "Determinación": "Ácidos Biliares",
+    "Determinación": "Ácidos Biliares (ACBIL)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1095,11 +1155,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 62,
-    "Determinación": "Factor Reumatoideo",
+    "Determinación": "Factor Reumatoideo (FRE)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1113,11 +1174,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660598"
   },
   {
     "ID": 63,
-    "Determinación": "Antiestreptolisina O",
+    "Determinación": "Antiestreptolisina O / ASTO (ASTOE)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1131,11 +1193,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente.",
-    "Sinónimos": "ASTO"
+    "Sinónimos": "",
+    "NBU": "660051"
   },
   {
     "ID": 64,
-    "Determinación": "Ciclosporina",
+    "Determinación": "Ciclosporina (CSA)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Sangre Entera",
@@ -1149,11 +1212,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Enviar SANGRE ENTERA. No centrifugar, no enviar suero ni plasma. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "663674"
   },
   {
     "ID": 65,
-    "Determinación": "Tacrolimus",
+    "Determinación": "Tacrolimus (TACROQ)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Sangre Entera",
@@ -1167,11 +1231,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Enviar SANGRE ENTERA. No centrifugar, no enviar suero ni plasma. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "665298"
   },
   {
     "ID": 66,
-    "Determinación": "Fructosamina",
+    "Determinación": "Fructosamina (FRU)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1185,11 +1250,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Corte de procesamiento semanal: días Jueves. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661065"
   },
   {
     "ID": 67,
-    "Determinación": "Colesterol Total",
+    "Determinación": "Colesterol Total (COL)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1203,11 +1269,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Sector Lípidos. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660174"
   },
   {
     "ID": 68,
-    "Determinación": "Triglicéridos",
+    "Determinación": "Triglicéridos (TRI)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1221,11 +1288,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Sector Lípidos. Respetar estrictamente el ayuno para evitar sueros lipémicos.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660876"
   },
   {
     "ID": 69,
-    "Determinación": "Colesterol HDL",
+    "Determinación": "Colesterol HDL (HDL)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1239,11 +1307,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Sector Lípidos. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661035"
   },
   {
     "ID": 70,
-    "Determinación": "Colesterol LDL",
+    "Determinación": "Colesterol LDL (LDL)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1257,11 +1326,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Sector Lípidos. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661040"
   },
   {
     "ID": 71,
-    "Determinación": "Proteinograma Electroforético",
+    "Determinación": "Proteinograma Electroforético (PTG)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Suero",
@@ -1275,11 +1345,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Sector Proteínas. Temperatura ambiente. Procesamiento diario.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660764"
   },
   {
     "ID": 72,
-    "Determinación": "Electroforesis de Hemoglobina",
+    "Determinación": "Electroforesis de Hemoglobina (EHEM)",
     "Grupo": "Química clínica",
     "Integrantes": "",
     "Muestra": "Sangre Entera",
@@ -1293,11 +1364,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Sector Proteínas. Temperatura ambiente. Procesamiento diario.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 73,
-    "Determinación": "Tiempo de Protrombina",
+    "Determinación": "Tiempo de Protrombina (TP / TPCS2)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado (Citrato de sodio 3,2%)",
@@ -1311,11 +1383,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Conservar a Temp. Ambiente. Refrigerar si se demora.",
-    "Sinónimos": "TP"
+    "Sinónimos": "",
+    "NBU": "660771"
   },
   {
     "ID": 74,
-    "Determinación": "Tiempo de Protrombina - Método Manual",
+    "Determinación": "Tiempo de Protrombina - Método Manual (TP M)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado (Citrato de sodio 3,2%)",
@@ -1329,11 +1402,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Método manual. Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temp. Ambiente (Refrigerar si se demora).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660771"
   },
   {
     "ID": 75,
-    "Determinación": "Tiempo de Tromboplastina Parcial Activado",
+    "Determinación": "KPTT (Tiempo de Tromboplastina Parcial Activado / KPTTCS2)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado (Citrato de sodio 3,2%)",
@@ -1347,7 +1421,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente. Centrifugar y separar en tubo de plástico. Refrigerar si demora.",
-    "Sinónimos": "KPTT"
+    "Sinónimos": "",
+    "NBU": "660887"
   },
   {
     "ID": 76,
@@ -1365,11 +1440,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Método manual. Temperatura ambiente. Centrifugar y separar en tubo de plástico.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660887"
   },
   {
     "ID": 77,
-    "Determinación": "Dímeros D",
+    "Determinación": "Dímeros D (DIMD)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado (Citrato de sodio 3,2%)",
@@ -1383,11 +1459,12 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "664418"
   },
   {
     "ID": 78,
-    "Determinación": "Fibrinógeno",
+    "Determinación": "Fibrinógeno (FIB)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado (Citrato de sodio 3,2%)",
@@ -1401,11 +1478,12 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente. Centrifugar y separar en tubo de plástico.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660345"
   },
   {
     "ID": 79,
-    "Determinación": "Anticoagulante Lúpico",
+    "Determinación": "Anticoagulante Lúpico (Screning y Confirmatorio - Código 2709)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado MUY pobre en plaquetas",
@@ -1419,11 +1497,12 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Doble centrifugado estricto para eliminar plaquetas. Separar en tubo de plástico. Temp. ambiente o congelar si se deriva.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "662709"
   },
   {
     "ID": 80,
-    "Determinación": "Dosaje de von Willebrand: Funcional / Inmunológico",
+    "Determinación": "Dosaje de von Willebrand: Funcional / Inmunológico (FVWF / 5119)",
     "Grupo": "Hemostasia",
     "Integrantes": "",
     "Muestra": "Plasma citratado (Citrato de sodio 3,2%)",
@@ -1437,7 +1516,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temperatura ambiente para procesamiento inmediato.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "665116 / 665119"
   },
   {
     "ID": 81,
@@ -1455,7 +1535,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Especificar factor solicitado. Centrifugar y separar en tubo plástico. Volver a centrifugar. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 82,
@@ -1473,7 +1554,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668614"
   },
   {
     "ID": 83,
@@ -1491,7 +1573,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668631 / 668648"
   },
   {
     "ID": 84,
@@ -1509,7 +1592,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar en tubo de plástico. Volver a centrifugar. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 85,
@@ -1527,7 +1611,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar y separar del paquete celular en tubo plástico. Volver a centrifugar. Freezar rápidamente a -20°C hasta su procesamiento/derivación.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668823"
   },
   {
     "ID": 86,
@@ -1545,7 +1630,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660933"
   },
   {
     "ID": 87,
@@ -1563,7 +1649,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660063"
   },
   {
     "ID": 88,
@@ -1581,7 +1668,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Procesar en el día, de lo contrario mantener en refrigeración (4°C).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660243"
   },
   {
     "ID": 89,
@@ -1599,7 +1687,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660242"
   },
   {
     "ID": 90,
@@ -1617,7 +1706,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: No centrifugar. Mantener a temperatura ambiente y procesar antes de las 6 horas de extracción de forma estricta.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660244"
   },
   {
     "ID": 91,
@@ -1635,7 +1725,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661025"
   },
   {
     "ID": 92,
@@ -1653,7 +1744,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661030"
   },
   {
     "ID": 93,
@@ -1671,7 +1763,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661075"
   },
   {
     "ID": 94,
@@ -1689,7 +1782,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661080"
   },
   {
     "ID": 95,
@@ -1707,7 +1801,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661086"
   },
   {
     "ID": 96,
@@ -1725,7 +1820,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "665905"
   },
   {
     "ID": 97,
@@ -1743,7 +1839,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Monitoreo de anticuerpos (Post-vacunación). Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661090"
   },
   {
     "ID": 98,
@@ -1761,7 +1858,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661095"
   },
   {
     "ID": 99,
@@ -1779,7 +1877,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Diagnóstico de Salmonelosis. Conservar a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 100,
@@ -1797,7 +1896,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Diagnóstico de Brucelosis. Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660494"
   },
   {
     "ID": 101,
@@ -1815,7 +1915,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Mononucleosis infecciosa. Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660670"
   },
   {
     "ID": 102,
@@ -1833,7 +1934,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Prueba treponémica confirmatoria. Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 103,
@@ -1851,7 +1953,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "669571"
   },
   {
     "ID": 104,
@@ -1869,7 +1972,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "669580"
   },
   {
     "ID": 105,
@@ -1887,7 +1991,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661055"
   },
   {
     "ID": 106,
@@ -1905,7 +2010,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661060"
   },
   {
     "ID": 107,
@@ -1923,7 +2029,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Primera orina de la mañana. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660711"
   },
   {
     "ID": 108,
@@ -1941,7 +2048,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Sin conservantes. Temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660736"
   },
   {
     "ID": 109,
@@ -1959,7 +2067,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "HORARIO ESTRICTO: Extracción a las 8 AM. Previo ayuno de 8 hs. Consignar medicación. Refrigerar a 4°C hasta 48 hs. Interfiere lipemia e ictericia severa.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660189"
   },
   {
     "ID": 110,
@@ -1977,7 +2086,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Usar tubo lila. Centrifugar inmediatamente después de la extracción y llevar directo al sector.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660006"
   },
   {
     "ID": 111,
@@ -1995,7 +2105,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar inmediatamente después de obtenida la muestra.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660841"
   },
   {
     "ID": 112,
@@ -2013,7 +2124,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar a 4°C hasta 24 hs o congelar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 113,
@@ -2031,7 +2143,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Centrifugar inmediatamente. Refrigerar hasta 48 hs o congelar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660739"
   },
   {
     "ID": 114,
@@ -2049,7 +2162,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "FISIOLÓGICO: Si menstrual normalmente, recolectar entre los días 21 a 23 del ciclo. Preguntar y anotar FUM. Si no menstrúa, en cualquier día. Interfiere lipemia.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660758"
   },
   {
     "ID": 115,
@@ -2067,7 +2181,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "FISIOLÓGICO: Si menstrúa normalmente, recolectar entre días 3 a 5 del ciclo. Anotar FUM. Evitar estrés. Sin relaciones sexuales ni alcohol 48 hs antes. Consignar medicación.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660759"
   },
   {
     "ID": 116,
@@ -2085,7 +2200,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "FISIOLÓGICO: Recolectar entre los días 3 a 5 del ciclo menstrual. Preguntar y anotar FUM de forma obligatoria.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660612 / 660370 / 660300"
   },
   {
     "ID": 117,
@@ -2103,7 +2219,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar hasta 48 hs o congelar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660863 / 660262 / múltiple"
   },
   {
     "ID": 118,
@@ -2121,7 +2238,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Consignar medicación (hormonas tiroideas). Refrigerar hasta 48 hs o congelar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660865 / 660878 / 660866 / 660867"
   },
   {
     "ID": 119,
@@ -2139,7 +2257,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar hasta 48 hs o congelar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 120,
@@ -2157,7 +2276,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar hasta 24 hs o congelar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660543"
   },
   {
     "ID": 121,
@@ -2175,7 +2295,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar inmediatamente el suero tras la retracción del coágulo y llevar directo al sector.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668280 / 668281 / 668282"
   },
   {
     "ID": 122,
@@ -2193,7 +2314,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar hasta 3 días. Interfiere la hemólisis de manera estricta.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "669443"
   },
   {
     "ID": 123,
@@ -2211,7 +2333,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Centrifugar inmediatamente y separar el suero.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "666452"
   },
   {
     "ID": 124,
@@ -2229,7 +2352,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar hasta 48 hs o congelar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661125"
   },
   {
     "ID": 125,
@@ -2247,7 +2371,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Consignar de forma obligatoria en la orden si la muestra se tomó en VALLE (justo antes de la dosis) o en PICO (post-infusión).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "669793"
   },
   {
     "ID": 126,
@@ -2265,7 +2390,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar hasta 3 días.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660020"
   },
   {
     "ID": 127,
@@ -2283,7 +2409,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: No realizar la extracción si la paciente se encuentra menstruando.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661115"
   },
   {
     "ID": 128,
@@ -2301,7 +2428,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar hasta 5 días.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661120"
   },
   {
     "ID": 129,
@@ -2319,7 +2447,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Refrigerar hasta 7 días.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660144"
   },
   {
     "ID": 130,
@@ -2337,7 +2466,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Pegar la etiqueta identificatoria directo en el cuerpo del frasco. Interfiere la bilirrubina y la hemólisis.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 131,
@@ -2355,7 +2485,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO PACIENTE: No tener relaciones sexuales 2 días antes. Esperar 3 semanas si se realizó ecografía transrectal, tacto rectal o uso de sonda. Sin diarrea/estreñimiento exagerado 1 semana antes. No ingerir alcohol la noche anterior. Sin ejercicio el día anterior. No extraer si cursa infección urinaria o fiebre.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661000 / 662734"
   },
   {
     "ID": 132,
@@ -2373,7 +2504,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "OBLIGATORIO: consignar fecha de toma, FUM y semanas de embarazo exactas.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 133,
@@ -2391,7 +2523,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "OBLIGATORIO: consignar fecha de toma, FUM y semanas de embarazo exactas.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 134,
@@ -2409,7 +2542,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: El neonato debe tener 48 hs de vida cumplidas de forma estricta. Conservar a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 135,
@@ -2427,7 +2561,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: El neonato debe tener 48 hs de vida cumplidas de forma estricta. Conservar a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 136,
@@ -2445,7 +2580,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: El neonato debe tener 48 hs de vida cumplidas y haber recibido alimentación (lactancia/fórmula) para activar el metabolismo. Temp. ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 137,
@@ -2463,7 +2599,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: El neonato debe tener 48 hs de vida cumplidas y haber recibido alimentación (lactancia/fórmula). Conservar a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 138,
@@ -2481,7 +2618,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Centrifugar dentro de las 2 hs de extracción de forma obligatoria. Enviar acompañado de la planilla específica del INSTITUTO MALBRÁN. Estabilidad: 24 hs a (8-25°C).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 139,
@@ -2499,7 +2637,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Centrifugar dentro de las 2 hs de extracción de forma obligatoria. Enviar acompañado de la planilla específica del INSTITUTO MALBRÁN. Estabilidad: 24 hs a (8-25°C).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 140,
@@ -2517,7 +2656,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Centrifugar dentro de las 2 hs de extracción de forma obligatoria. Enviar acompañado de la planilla específica del INSTITUTO MALBRÁN. Estabilidad: 24 hs a (8-25°C).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 141,
@@ -2535,7 +2675,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Protocolo para hijos de madres positivas hasta los 10 meses de vida. Mantener a temperatura ambiente (refrigerar a 4°C únicamente durante el transporte).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 142,
@@ -2553,7 +2694,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: El neonato debe tener 48 hs de vida cumplidas de forma estricta. Conservar a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 143,
@@ -2571,7 +2713,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: El neonato debe tener 48 hs de vida cumplidas de forma estricta. Conservar a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 144,
@@ -2589,7 +2732,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Muestra aceptada en múltiples soportes: Sangre entera en papel de filtro, sangre entera con anticoagulante EDTA o hisopado de mucosa yugal (boca).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 145,
@@ -2607,7 +2751,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Estabilidad: Procesar en el día a temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660056"
   },
   {
     "ID": 146,
@@ -2625,7 +2770,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Estabilidad: Procesar en el día a temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660049"
   },
   {
     "ID": 147,
@@ -2643,7 +2789,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Estabilidad: Procesar en el día a temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "663734"
   },
   {
     "ID": 148,
@@ -2661,7 +2808,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Estabilidad: Procesar en el día a temperatura ambiente o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "663740"
   },
   {
     "ID": 149,
@@ -2679,7 +2827,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Marcador de Celiaquía. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "664632"
   },
   {
     "ID": 150,
@@ -2697,7 +2846,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Marcador de Celiaquía. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661192"
   },
   {
     "ID": 151,
@@ -2715,7 +2865,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Marcador de Celiaquía. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660407"
   },
   {
     "ID": 152,
@@ -2733,7 +2884,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Cirrosis Biliar Primaria. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660055"
   },
   {
     "ID": 153,
@@ -2751,7 +2903,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Hepatitis Autoinmune. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660042"
   },
   {
     "ID": 154,
@@ -2769,7 +2922,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Marcador de miositis. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 155,
@@ -2787,7 +2941,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Alta especificidad para Artritis Reumatoidea. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "661141"
   },
   {
     "ID": 156,
@@ -2805,7 +2960,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Altamente específico para Lupus (LES). Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 157,
@@ -2823,7 +2979,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Lupus inducido por drogas. Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "666238"
   },
   {
     "ID": 158,
@@ -2841,7 +2998,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Marcador de Enfermedad Mixta del Tejido Conectivo. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668896"
   },
   {
     "ID": 159,
@@ -2859,7 +3017,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Anemia Perniciosa/Gastritis Atrófica. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 160,
@@ -2877,7 +3036,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Esclerodermia sistémica. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 161,
@@ -2895,7 +3055,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Síndrome de Sjögren. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 162,
@@ -2913,7 +3074,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Síndrome de Sjögren y Lupus neonatal. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668905"
   },
   {
     "ID": 163,
@@ -2931,7 +3093,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Psicosis lúpica / LES activo. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668860"
   },
   {
     "ID": 164,
@@ -2949,7 +3112,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Síndrome de Goodpasture. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660041"
   },
   {
     "ID": 165,
@@ -2967,7 +3131,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 166,
@@ -2985,7 +3150,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Procesar en el día o refrigerar a 4°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "668656"
   },
   {
     "ID": 167,
@@ -3003,7 +3169,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Síndrome Antifosfolipídico (SAF). Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 168,
@@ -3021,7 +3188,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Síndrome Antifosfolipídico (SAF). Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 169,
@@ -3039,7 +3207,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Síndrome Antifosfolipídico (SAF). Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 170,
@@ -3057,7 +3226,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Síndrome Antifosfolipídico (SAF). Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 171,
@@ -3075,7 +3245,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Marcador predictivo de nefropatía lúpica. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 172,
@@ -3093,7 +3264,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Hepatitis Autoinmune tipo 2. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 173,
@@ -3111,7 +3283,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Hepatitis Autoinmune. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 174,
@@ -3129,7 +3302,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Especificidad para Cirrosis Biliar Primaria. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 175,
@@ -3147,7 +3321,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Cirrosis Biliar Primaria. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 176,
@@ -3165,7 +3340,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Marcador de Hepatitis Autoinmune tipo 2. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 177,
@@ -3183,7 +3359,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Altamente específico para Dermatomiositis. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 178,
@@ -3201,7 +3378,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Síndrome Antisintetasa. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 179,
@@ -3219,7 +3397,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Asociado a Síndrome Antisintetasa. Procesar en el día o refrigerar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 180,
@@ -3237,7 +3416,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO MUESTRA: Entregar muestra en frasco limpio sin aditivos. Procesar en el día o mantener refrigerado.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 181,
@@ -3255,7 +3435,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO EXTRACCIÓN: Extraer con jeringa precalentada a 37°C. Colocar en tubo seco y mantener a 37°C de forma constante hasta su coagulación completa (ej: baño termostático, cuidando que todo el volumen quede rodeado por el agua). Centrifugar en centrífuga precalentada (operada previamente 20-30 min). Aspirar el suero con pipeta precalentada y pasar a tubo seco.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 182,
@@ -3273,7 +3454,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Hombre: retraer prepucio para higiene. Mujer: colocar tapón vaginal. Si demora >2 hs, refrigerar obligatoriamente a 4°C (puerta de heladera) rodeado de hielo. No congelar.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660911"
   },
   {
     "ID": 183,
@@ -3291,7 +3473,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: No estar tomando antibióticos (ATB). No usar antisépticos bucales antes de la toma.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660309"
   },
   {
     "ID": 184,
@@ -3309,7 +3492,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Mantener SIEMPRE a temperatura ambiente o en estufa a 35-37°C. NO REFRIGERAR JAMÁS (inactiva las bacterias).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Módulo / consultar NBU"
   },
   {
     "ID": 185,
@@ -3327,7 +3511,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "No usar laxantes ni aceites. Conservar en heladera hasta su transporte inmediato.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660187"
   },
   {
     "ID": 186,
@@ -3345,7 +3530,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Conservar a temperatura ambiente. Traer al laboratorio inmediatamente antes de que transcurra 1 hora de la eyaculación.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 187,
@@ -3363,7 +3549,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "RESTRICCIONES: 48 hs antes: No tener relaciones sexuales, no colocarse óvulos, tabletas ni cremas vaginales. No realizar duchas vaginales. Conservar a temp. ambiente o estufa a 35°C.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660931"
   },
   {
     "ID": 188,
@@ -3381,7 +3568,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: No estar tomando antibióticos (ATB). Conservar y transportar calente (entre 35°C y 37°C).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660903"
   },
   {
     "ID": 189,
@@ -3399,7 +3587,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Conservar a temperatura ambiente. Traer inmediatamente al laboratorio.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 190,
@@ -3417,7 +3606,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Conservar en heladera. Traer inmediatamente al laboratorio.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 191,
@@ -3435,7 +3625,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO PACIENTE: No realizarse higiene genital en las 12 horas previas a la toma de la muestra. Mantener a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660844"
   },
   {
     "ID": 192,
@@ -3453,7 +3644,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "URGENCIA BIOLÓGICA: Traer inmediatamente al laboratorio. Mantener a temperatura ambiente. NO REFRIGERAR (salvo sospecha viral o micótica específica).",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660619"
   },
   {
     "ID": 193,
@@ -3471,7 +3663,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Traer inmediatamente. Conservar a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 194,
@@ -3489,7 +3682,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Mantener a temperatura ambiente para bacteriología. No dejar secar la muestra.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 195,
@@ -3507,7 +3701,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: El hisopado superficial no sirve (se contamina con flora de piel). Conservar a temperatura ambiente y traer urgente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 196,
@@ -3525,7 +3720,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Conservar a temperatura ambiente o heladera.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 197,
@@ -3543,7 +3739,8 @@
     "Urgencia": "Media",
     "Condiciones especiales": "",
     "Observaciones": "Conservar en heladera hasta su transporte inmediato al laboratorio.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 198,
@@ -3561,7 +3758,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "PREPARACIÓN: Piel/Pelo: Lavar con jabón blanco, sin cremas ni talcos. Uñas: Cepillar 3 días antes, suspender cremas/talcos, sin esmalte. Concurrir con zapatos cerrados y medias. Suspender antifúngico local 1 semana y oral 1 mes antes.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 199,
@@ -3579,7 +3777,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Investigación de hongos dimórficos o levaduras oportunistas. Conservar muestras respiratorias refrigeradas.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 200,
@@ -3597,7 +3796,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "Búsqueda directa de Cryptococcus neoformans. Traer urgente. Conservar a temperatura ambiente.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 201,
@@ -3615,7 +3815,8 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Detección de anticuerpos contra Aspergillus, Histoplasma, Paracoccidioides. OBLIGATORIO: Solicitar y adjuntar planilla epidemiológica del sector.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 202,
@@ -3633,7 +3834,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Pacientes neutropénicos febriles. Solo se recibe con la firma y autorización obligatoria del servicio de INFECTOLOGÍA.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "665508"
   },
   {
     "ID": 203,
@@ -3651,7 +3853,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Enviar muestra refrigerada de forma inmediata. Solo se recibe con la firma y autorización obligatoria del servicio de INFECTOLOGÍA.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": ""
   },
   {
     "ID": 204,
@@ -3669,7 +3872,8 @@
     "Urgencia": "Alta",
     "Condiciones especiales": "",
     "Observaciones": "CRÍTICO: Orientado a pacientes con VIH o inmunodeprimidos. Solo se recibe con la firma y autorización obligatoria del servicio de INFECTOLOGÍA.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "Múltiple"
   },
   {
     "ID": 205,
@@ -3687,6 +3891,7 @@
     "Urgencia": "Baja",
     "Condiciones especiales": "",
     "Observaciones": "Estudio de resistencia auxanográfica o automatizada sobre aislamientos microbiológicos previos.",
-    "Sinónimos": ""
+    "Sinónimos": "",
+    "NBU": "660053"
   }
 ]
