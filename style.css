@@ -1606,7 +1606,6 @@ html[data-theme="dark"] .dashboard-stats i {
     from { opacity:0; transform:translateY(18px); }
     to { opacity:1; transform:translateY(0); }
 }
-```css
 /* =========================================
    APOYO A GUÍALAB · MATECITO
    ========================================= */
