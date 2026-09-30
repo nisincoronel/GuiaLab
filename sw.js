@@ -1,4 +1,4 @@
-const CACHE_NAME = 'guialab-cache-v20';
+const CACHE_NAME = 'guialab-cache-v21';
 
 const APP_ASSETS = [
   './',
