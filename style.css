@@ -1634,18 +1634,9 @@ html[data-theme="dark"] .dashboard-stats i {
 
     text-decoration: none;
 
-    /* Permite moverlo */
-    cursor: grab;
-    user-select: none;
-    touch-action: none;
-
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
-}
-
-.matecito-flotante:active {
-    cursor: grabbing;
 }
 
 .matecito-flotante:hover {
@@ -1665,15 +1656,12 @@ html[data-theme="dark"] .dashboard-stats i {
     border-radius: 10px;
 
     font-size: 20px;
-
-    pointer-events: none;
 }
 
 .matecito-text {
     display: flex;
     flex-direction: column;
     line-height: 1.2;
-    pointer-events: none;
 }
 
 .matecito-text strong {
@@ -1715,4 +1703,3 @@ html[data-theme="dark"] .dashboard-stats i {
         font-size: 10px;
     }
 }
-```
