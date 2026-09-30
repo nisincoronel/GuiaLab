@@ -1587,8 +1587,17 @@ html[data-theme="dark"] .student-reveal-all { border-color:#3c794d; color:#dfff8
 html[data-theme="dark"] .mobile-bottom-nav { border-color:#2c6543; background:rgba(6,38,22,.94); box-shadow:0 10px 30px rgba(0,0,0,.34); }
 html[data-theme="dark"] .mobile-nav-item { color:#b8cfbd; }
 html[data-theme="dark"] .mobile-nav-item.active { color:#dfff8c; background:#184c2e; }
-html[data-theme="dark"] .dashboard-stats strong {
-    color: #b6df18;
+/* Stats verdes en modo oscuro */
+html[data-theme="dark"] .dashboard-stats > div {
+    border-color: #07512f;
+    background: linear-gradient(125deg, #07512f 0%, #0c7746 48%, #79a90a 130%);
+}
+
+html[data-theme="dark"] .dashboard-stats strong,
+html[data-theme="dark"] .dashboard-stats small,
+html[data-theme="dark"] .dashboard-stats i {
+    color: #fff;
+}
 }
 @keyframes institutionalGlow { from { transform:translate3d(0,0,0) scale(1); } to { transform:translate3d(4rem,2rem,0) scale(1.14); } }
 @media (prefers-reduced-motion: reduce) { body::before,body::after { animation:none; } }
