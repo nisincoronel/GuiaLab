@@ -24,6 +24,13 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="theme-color" content="#07512f">
+    <script>
+        (() => {
+            const saved = localStorage.getItem('guialabTheme');
+            const dark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        })();
+    </script>
 </head>
 <body>
 
@@ -33,7 +40,10 @@
                 <div class="brand-mini brand-full-logo">
                     <img class="brand-logo" src="logo-guialab.png" alt="GuíaLab · Formación y capacitación continua">
                 </div>
-                <span class="online-pill"><i class="fas fa-circle"></i> Activo</span>
+                <div class="header-actions">
+                    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Activar modo oscuro" aria-pressed="false"><i class="fas fa-moon"></i><span>Oscuro</span></button>
+                    <span class="online-pill"><i class="fas fa-circle"></i> Activo</span>
+                </div>
             </div>
             <div class="dashboard-welcome">
                 <div>
@@ -86,6 +96,69 @@
                 <span class="guide-copy"><strong>Modo estudiante</strong><span>Activá una vista pensada para estudiar: preparación, muestra, tubo y procesamiento.</span></span>
                 <span class="guide-toggle"><i class="fas fa-toggle-off"></i></span>
             </button>
+            <a class="challenge-card" href="game.html" aria-label="Abrir Desafío GuíaLab">
+                <span class="challenge-orbit challenge-orbit-one"></span>
+                <span class="challenge-orbit challenge-orbit-two"></span>
+                <span class="challenge-icon"><i class="fas fa-gamepad"></i></span>
+                <span class="challenge-copy">
+                    <span class="challenge-kicker"><i class="fas fa-sparkles"></i> Desafío GuíaLab</span>
+                    <strong>Convertí el estudio en un juego</strong>
+                    <small>Preguntas dinámicas sobre las determinaciones reales.</small>
+                </span>
+                <span class="challenge-action">Jugar <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <section class="utilities-card" id="utilidades" aria-labelledby="utilitiesTitle">
+                <button type="button" class="utilities-toggle" id="utilitiesToggle" aria-expanded="false" aria-controls="utilitiesMenu">
+                    <span class="utilities-icon"><i class="fas fa-toolbox"></i></span>
+                    <span class="utilities-toggle-copy"><span class="section-kicker">Herramientas</span><strong id="utilitiesTitle">Utilidades</strong><small>Calculadoras y recursos de apoyo</small></span>
+                    <span class="utilities-chevron"><i class="fas fa-chevron-down"></i></span>
+                </button>
+                <div class="utilities-menu" id="utilitiesMenu" hidden>
+                    <button type="button" class="utility-item" id="dilutionUtilityToggle" aria-expanded="false" aria-controls="dilutionCalculator">
+                        <span class="utility-item-icon"><i class="fas fa-calculator"></i></span>
+                        <span><strong>Calculadora de diluciones</strong><small>General y seriada, con resultados paso a paso.</small></span>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                <div class="dilution-calculator" id="dilutionCalculator" hidden>
+                <div class="utilities-heading">
+                    <div>
+                        <p class="section-kicker">Calculadora</p>
+                        <h3>Prepará una dilución</h3>
+                        <p>Usá la misma unidad de concentración en C₁ y C₂.</p>
+                    </div>
+                </div>
+                <div class="dilution-tabs" role="tablist" aria-label="Tipo de cálculo">
+                    <button type="button" class="dilution-tab is-active" role="tab" aria-selected="true" aria-controls="generalCalculator" id="generalTab" data-dilution-tab="generalCalculator">Dilución general</button>
+                    <button type="button" class="dilution-tab" role="tab" aria-selected="false" aria-controls="serialCalculator" id="serialTab" data-dilution-tab="serialCalculator">Seriada</button>
+                </div>
+                <div class="dilution-panel" id="generalCalculator" role="tabpanel" aria-labelledby="generalTab">
+                    <div class="calculation-choice">
+                        <label><input type="radio" name="dilutionMode" value="final" checked> Preparar un volumen final</label>
+                        <label><input type="radio" name="dilutionMode" value="available"> Diluir un volumen disponible</label>
+                    </div>
+                    <div class="dilution-grid">
+                        <label>Concentración inicial (C₁)<input id="initialConcentration" inputmode="decimal" type="number" min="0" step="any" placeholder="Ej. 10"></label>
+                        <label>Concentración final (C₂)<input id="finalConcentration" inputmode="decimal" type="number" min="0" step="any" placeholder="Ej. 2"></label>
+                        <label id="volumeLabel">Volumen final deseado (V₂)<span class="input-with-unit"><input id="targetVolume" inputmode="decimal" type="number" min="0" step="any" placeholder="Ej. 5"><select id="generalVolumeUnit" aria-label="Unidad de volumen"><option>mL</option><option>µL</option><option>L</option></select></span></label>
+                    </div>
+                    <p class="calculator-hint">Usá la misma unidad de concentración en C₁ y C₂. Fórmula: C₁ × V₁ = C₂ × V₂.</p>
+                    <button type="button" class="calculate-button" id="calculateGeneral"><i class="fas fa-flask"></i> Calcular dilución</button>
+                    <div class="calculation-result" id="generalResult" aria-live="polite" hidden></div>
+                </div>
+                <div class="dilution-panel" id="serialCalculator" role="tabpanel" aria-labelledby="serialTab" hidden>
+                    <div class="dilution-grid serial-grid">
+                        <label>Concentración inicial<input id="serialConcentration" inputmode="decimal" type="number" min="0" step="any" placeholder="Ej. 1000"></label>
+                        <label>Dilución por paso (1 : x)<input id="serialFactor" inputmode="decimal" type="number" min="1" step="any" placeholder="Ej. 10"></label>
+                        <label>Cantidad de tubos<input id="serialSteps" inputmode="numeric" type="number" min="1" max="50" step="1" placeholder="Ej. 5"></label>
+                        <label>Volumen final por tubo<span class="input-with-unit"><input id="serialVolume" inputmode="decimal" type="number" min="0" step="any" placeholder="Ej. 1"><select id="serialVolumeUnit" aria-label="Unidad de volumen por tubo"><option>mL</option><option>µL</option><option>L</option></select></span></label>
+                    </div>
+                    <p class="calculator-hint">Cada tubo se prepara con una fracción de la dilución anterior y diluyente hasta completar el volumen indicado.</p>
+                    <button type="button" class="calculate-button" id="calculateSerial"><i class="fas fa-table"></i> Generar tabla</button>
+                    <div class="serial-result" id="serialResult" aria-live="polite" hidden></div>
+                </div>
+                </div>
+                </div>
+            </section>
             <div id="studentModePanel" class="student-mode-panel" hidden>
                 <div class="student-mode-title"><i class="fas fa-book-medical"></i><strong>Modo estudiante activado</strong></div>
                 <div class="student-mode-grid">
@@ -93,10 +166,6 @@
                     <div><b>2</b><span>Revisá preparación y ayuno</span></div>
                     <div><b>3</b><span>Identificá muestra y tubo</span></div>
                     <div><b>4</b><span>Estudiá el procesamiento</span></div>
-                </div>
-                <div class="student-panel-actions">
-                    <button type="button" id="studentStartButton" class="student-start"><i class="fas fa-search"></i> Ir al buscador</button>
-                    <button type="button" id="studentTrainingButton" class="student-start student-training"><i class="fas fa-dumbbell"></i> Entrenamiento</button>
                 </div>
             </div>
             <p class="clinical-note"><i class="fas fa-circle-info"></i> Material de apoyo para formación. Validá siempre el procedimiento vigente con la dirección técnica y el protocolo de tu institución.</p>
@@ -126,7 +195,6 @@
         </section>
 
         <p id="resultsSummary" class="results-summary" aria-live="polite"></p>
-        <section id="studentQuizPanel" class="student-quiz-panel" hidden aria-live="polite"></section>
         <ul id="examList" aria-label="Resultados de estudios"></ul>
 
         <div id="modal" class="modal">
@@ -141,6 +209,11 @@
             <strong>Nisin Coronel</strong>
             <span>Técnico Superior en Lab. Químico Biológico</span>
             <div class="footer-tag">Posadas, Misiones | 2026</div>
+            <div class="visit-counter" aria-label="Contador de visitas">
+                <i class="fas fa-eye" aria-hidden="true"></i>
+                <span>Visitas únicas:</span>
+                <span class="counterapi" ns="guialab-nisin-2026" action="view" key="inicio" unique="true" label="" noCss="true" noIcon="true" noLink="true" noAnim="true" style="min-height: 20px"></span>
+            </div>
             
             <a href="https://wa.me/+5493765127562" 
                target="_blank" 
@@ -159,13 +232,8 @@
     </nav>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const btn = document.getElementById('studentTrainingButton');
-            if (btn) btn.addEventListener('click', iniciarEntrenamiento);
-        });
-    </script>
-
+    <script src="dilution.js"></script>
+    <script src="https://counterapi.com/c.js" async></script>
     <script>
         // Navegación móvil: mantiene una experiencia tipo app sin alterar la lógica existente.
         document.querySelectorAll('.mobile-nav-item').forEach(item => {
